@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no" />
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<script type="text/javascript" src="NKit.js"></script>
+
+<script language="javascript">
+NKSetPageOpaque('prompt.html', 'NO');
+
+var navController = new NKNavigationController();
+navController.setTitle("Alert Prompt");
+navController.setTintColor(0, 0, 0);
+    
+NKRegisterClass("AlertClass"); //Register the class
+        
+        function showPrompt() {
+            //=========================
+            //Parameters
+            //=========================
+            //title: title of prompt
+            //message: message of prompt - add \n\n\n for it to be visible & change y-coordinates in yourClass.m
+            //cancel: cancel button label
+            //ok: ok button label
+            //placeholder: placeholder text displayed in text box
+            //jsFunction: javascript function to be called. See example below for proper format
+            
+        var action="showAlert?className=AlertClass&title=Prompt Alert&message=Prompt Message\n\n\n&cancel=Cancel&ok=Okay&placeholder=placeholder&jsFunction=buttonPressed('%@')"
+            CallNKitAction(action);
+        }
+        
+        function buttonPressed(text) {
+        document.getElementById('results').innerHTML=text
+        }
+</script>
+</head>
+
+
+    <body>
+    <div class="greybutton" onClick="showPrompt()">Show Alert With Prompt</div>
+    <div id="results" class="infobox">Your Text Will Appear Here</div>
+    </body>
+    
+</html>

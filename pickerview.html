@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no" />
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+
+
+<body onload="ShowPicker()">
+<script type="text/javascript" src="NKit.js"></script>
+
+
+<script>
+
+NKSetPageOpaque('pickerview.html', 'NO');
+
+var navController = new NKNavigationController();
+navController.setTitle("Picker");
+navController.setTintColor(0, 0, 0);
+
+
+// Picker ========================================================
+NKRegisterClass("MyPickerController");
+
+function ShowPicker()
+{
+	CallNKitAction("showMyPicker?className=MyPickerController");	
+}
+
+function SetValueForRowInComponent(componentIndex, rowIndex, value)
+{
+	CallNKitAction("SetValueForRowInComponent?className=MyPickerController&component="+componentIndex+"&rowIndex="+rowIndex+"&value="+value);
+}
+
+function fillPicker()
+{
+	SetValueForRowInComponent(0, 0, "Small");
+	SetValueForRowInComponent(1, 0, "Stilton");
+	
+	SetValueForRowInComponent(0, 1, "Medium");
+	SetValueForRowInComponent(1, 1, "Brie");
+	
+	SetValueForRowInComponent(0, 2, "Large");
+	SetValueForRowInComponent(1, 2, "Feta");
+}
+
+fillPicker();
+
+
+// Results =======================================================
+function showSelection()
+{
+    var selection = CallNKitAction("getSelectedString?className=MyPickerController&sync=yes");
+    NKAlert("You Chose:", selection);
+}
+
+</script>
+
+
+<div class="infobox">Make a selection from the picker below and get your results returned via a NKAlert instance</div>
+<div class="greybutton" onClick="showSelection()">Show Selection</div>
+
+</body>
+</html>

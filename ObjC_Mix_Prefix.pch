@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'ObjC-Mix' target in the 'ObjC-Mix' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif

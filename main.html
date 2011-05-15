@@ -1,0 +1,79 @@
+<html>
+<head>
+<meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no" />
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+<script type="text/javascript" src="NKit.js"></script>
+
+<script>
+
+//NKSetWebViewBackgroundColor(0, 0, 0, 0.5);
+
+NKSetPageOpaque('main.html', 'NO');
+
+
+var navController = new NKNavigationController();
+navController.setTitle("Objective-C Tests");
+navController.setTintColor(0, 0, 0);
+//navController.addNavigationItem("Hide","CallNKitAction('hideWebsite?className=T1WebView')",14);
+
+
+var tabController = new NKTabBarController();
+tabController.setTabBarForPage("main.html", "Main", "book32.png");
+tabController.setTabBarForPage("pickerview.html", "Picker", "book32.png");
+tabController.setTabBarForPage("prompt.html", "Prompt", "book32.png");
+tabController.setTabBarForPage("table.html", "Tab 4", "book32.png");
+
+
+// NKRegisterClass's
+NKRegisterClass("CustomAlert");
+NKRegisterClass("ActivityIndicator");
+NKRegisterClass("webViewController");
+NKRegisterClass("battery");
+NKRegisterClass("leftButton");
+NKRegisterClass("locale");
+
+NKRegisterClass("deShadow");
+
+
+
+
+function alertPower()
+{
+	var batteryLevel = CallNKitAction('getBatteryLevel?className=battery&sync=yes'); 
+	NKAlert("Battery at:", batteryLevel);
+}
+
+function getLocale()
+{
+    var locale = CallNKitAction('getLocale?className=locale&sync=yes');
+    NKAlert("Your Currency Symbol Is:", locale);
+}
+
+function getLocation()
+{
+    var locale = CallNKitAction('getLocation?className=locale&sync=yes');
+    NKAlert("Your Device Country Code Is:", locale);
+}
+
+
+</script>
+
+
+<ul>
+
+<!--<li><a href="#" onClick="CallNKitAction('showAlert?className=MyObjective')">Show Alert</a></li>-->
+<li><a href="#" onClick="CallNKitAction('CustomAlert?className=CustomAlert')">Show Custom</a></li>
+<li><a href="#" onClick="CallNKitAction('showActivityIndicator?className=ActivityIndicator')">Show Status Bar Activity Indicator</a></li>
+<li><a href="#" onClick="CallNKitAction('hideActivityIndicator?className=ActivityIndicator')">Hide Status Bar Activity Indicator</a></li>
+<li><a href="#" onClick="alertPower()">Get Battery Level</a></li>
+<li><a href="#" onClick="CallNKitAction('addLeftButton?className=leftButton')">Show Left Button</a></li>
+<li><a href="#" onClick="getLocale()">Get Locale</a></li>
+<li><a href="#" onClick="getLocation()">Get Location</a></li>
+<li><a href="#" onClick="CallNKitAction('dummy?className=deShadow')">Remove UIWebView Shadow</a></li>
+
+</ul>
+</body>
+</html>
