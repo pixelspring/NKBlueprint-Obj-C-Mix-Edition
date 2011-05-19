@@ -9,15 +9,12 @@
 
 <script>
 
-//NKSetWebViewBackgroundColor(0, 0, 0, 0.5);
-
 NKSetPageOpaque('main.html', 'NO');
 
 
 var navController = new NKNavigationController();
 navController.setTitle("Objective-C Tests");
 navController.setTintColor(0, 0, 0);
-//navController.addNavigationItem("Hide","CallNKitAction('hideWebsite?className=T1WebView')",14);
 
 
 var tabController = new NKTabBarController();
@@ -34,30 +31,46 @@ NKRegisterClass("webViewController");
 NKRegisterClass("battery");
 NKRegisterClass("leftButton");
 NKRegisterClass("locale");
-
 NKRegisterClass("deShadow");
 
+NKRegisterClass("buttonlessAlert");
+NKRegisterClass("navSpinner");
+NKRegisterClass("flashLight");
 
-
-
+// Battery Status
 function alertPower()
 {
 	var batteryLevel = CallNKitAction('getBatteryLevel?className=battery&sync=yes'); 
 	NKAlert("Battery at:", batteryLevel);
 }
 
+// Get Currency Symbol
 function getLocale()
 {
     var locale = CallNKitAction('getLocale?className=locale&sync=yes');
     NKAlert("Your Currency Symbol Is:", locale);
 }
 
+// Get Device Country Code
 function getLocation()
 {
     var locale = CallNKitAction('getLocation?className=locale&sync=yes');
     NKAlert("Your Device Country Code Is:", locale);
 }
 
+// Show a buttonless alert...
+function showButtonlessAlert()
+{
+    CallNKitAction('showButtonless?className=buttonlessAlert');
+    setTimeout( "hideButtonlessAlert();", 5000); 
+}
+
+// ... and then hide it as we don't have any buttons(!)
+function hideButtonlessAlert()
+{
+    NKLog("hideButtonlessAlert Called");
+    CallNKitAction('hideButtonless?className=buttonlessAlert');
+}
 
 </script>
 
@@ -74,6 +87,20 @@ function getLocation()
 <li><a href="#" onClick="getLocation()">Get Location</a></li>
 <li><a href="#" onClick="CallNKitAction('dummy?className=deShadow')">Remove UIWebView Shadow</a></li>
 
+<!-- ********************************************************
+<--- NEED TO ADD CHECK FOR OS VERSION & DEVICE CAPABILITY
+<--- This will ONLY run on device and will crash simulator
+<--- ********************************************************-->
+<li><a href="#" onClick="CallNKitAction('flashOn?className=flashLight')">Flashlight On</a></li>
+<li><a href="#" onClick="CallNKitAction('flashOff?className=flashLight')">Flashlight Off</a></li>
+
+<!-- ********************************************************
+<--- NOT YET WORKING and/or CRASHY
+<--- Please feel free to fix ;)
+<--- ********************************************************
+<li><a href="#" onClick="showButtonlessAlert()">Show Buttonless Alert</a></li>
+<li><a href="#" onClick="CallNKitAction('showSpinner?className=navSpinner')">Show NavBar Spinner</a></li>
+-->
 </ul>
 </body>
 </html>

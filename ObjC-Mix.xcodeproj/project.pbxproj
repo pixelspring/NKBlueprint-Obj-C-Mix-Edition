@@ -22,7 +22,10 @@
 		1E31297A135A049B00C4D881 /* wbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E312979135A049B00C4D881 /* wbg.png */; };
 		1E31298A135A098B00C4D881 /* nk_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E312989135A098B00C4D881 /* nk_background.png */; };
 		1E312998135B47E200C4D881 /* deShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E312997135B47E200C4D881 /* deShadow.m */; };
+		1E3A94B91385324B003A53AB /* flashLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E3A94B81385324B003A53AB /* flashLight.m */; };
 		1E47B81A133E651D005EF497 /* locale.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E47B819133E651D005EF497 /* locale.m */; };
+		1E733F4A1382EA4700292604 /* buttonlessAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E733F491382EA4600292604 /* buttonlessAlert.m */; };
+		1E733F4D1382EC3F00292604 /* navSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E733F4C1382EC3F00292604 /* navSpinner.m */; };
 		1E919A221347263400820EFF /* prompt.html in Resources */ = {isa = PBXBuildFile; fileRef = 1E919A211347263400820EFF /* prompt.html */; };
 		1E91B88812EAF73F008FF06A /* battery.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E91B88712EAF73F008FF06A /* battery.m */; };
 		1EA7229A13360EDF00CDC608 /* MyPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA7229913360EDF00CDC608 /* MyPickerController.m */; };
@@ -70,8 +73,14 @@
 		1E312989135A098B00C4D881 /* nk_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nk_background.png; sourceTree = "<group>"; };
 		1E312996135B47E200C4D881 /* deShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = deShadow.h; sourceTree = "<group>"; };
 		1E312997135B47E200C4D881 /* deShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = deShadow.m; sourceTree = "<group>"; };
+		1E3A94B71385324B003A53AB /* flashLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flashLight.h; sourceTree = "<group>"; };
+		1E3A94B81385324B003A53AB /* flashLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = flashLight.m; sourceTree = "<group>"; };
 		1E47B818133E651D005EF497 /* locale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = locale.h; sourceTree = "<group>"; };
 		1E47B819133E651D005EF497 /* locale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = locale.m; sourceTree = "<group>"; };
+		1E733F481382EA4600292604 /* buttonlessAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buttonlessAlert.h; sourceTree = "<group>"; };
+		1E733F491382EA4600292604 /* buttonlessAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = buttonlessAlert.m; sourceTree = "<group>"; };
+		1E733F4B1382EC3F00292604 /* navSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = navSpinner.h; sourceTree = "<group>"; };
+		1E733F4C1382EC3F00292604 /* navSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = navSpinner.m; sourceTree = "<group>"; };
 		1E919A211347263400820EFF /* prompt.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = prompt.html; sourceTree = "<group>"; };
 		1E91B88612EAF73F008FF06A /* battery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = battery.h; path = ../battery.h; sourceTree = "<group>"; };
 		1E91B88712EAF73F008FF06A /* battery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = battery.m; path = ../battery.m; sourceTree = "<group>"; };
@@ -151,6 +160,12 @@
 				1E312977135A048F00C4D881 /* wood.m */,
 				1E312996135B47E200C4D881 /* deShadow.h */,
 				1E312997135B47E200C4D881 /* deShadow.m */,
+				1E733F481382EA4600292604 /* buttonlessAlert.h */,
+				1E733F491382EA4600292604 /* buttonlessAlert.m */,
+				1E733F4B1382EC3F00292604 /* navSpinner.h */,
+				1E733F4C1382EC3F00292604 /* navSpinner.m */,
+				1E3A94B71385324B003A53AB /* flashLight.h */,
+				1E3A94B81385324B003A53AB /* flashLight.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -319,6 +334,9 @@
 				1E312971135A012700C4D881 /* AlertClass.m in Sources */,
 				1E312978135A048F00C4D881 /* wood.m in Sources */,
 				1E312998135B47E200C4D881 /* deShadow.m in Sources */,
+				1E733F4A1382EA4700292604 /* buttonlessAlert.m in Sources */,
+				1E733F4D1382EC3F00292604 /* navSpinner.m in Sources */,
+				1E3A94B91385324B003A53AB /* flashLight.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
