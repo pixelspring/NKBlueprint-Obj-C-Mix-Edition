@@ -5,6 +5,7 @@
 //  Created by Mike Seaby on 17/05/2011.
 //  Copyright 2011 Mike Seaby. All rights reserved.
 //
+//  http://iphonedevelopertips.com/user-interface/uialertview-without-buttons-please-wait-dialog.html
 
 #import "buttonlessAlert.h"
 #import "NKBridge.h"

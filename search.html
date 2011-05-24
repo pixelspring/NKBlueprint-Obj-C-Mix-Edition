@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no" />
+<script src="shared/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="NKit.js"></script>
+        
+<script>
+var navController = new NKNavigationController();
+navController.setTitle("UISearchBar");
+
+NKRegisterClass("MyUISearchBar");
+CallNKitAction("showSearchBar?className=MyUISearchBar");	
+</script>
+</head>
+
+
+<body style="margin-top:75px">
+        
+<script>
+            
+    function searchUpdated(searchValue)
+    {
+        $("#container").html(searchValue);
+    }
+    
+    function searchButtonClicked()
+    {
+        CallNKitAction("dismissKeyboard?className=MyUISearchBar");
+    }
+    
+</script>
+        
+        
+<div id="container">content here</div>
+        
+        
+</body>
+</html>

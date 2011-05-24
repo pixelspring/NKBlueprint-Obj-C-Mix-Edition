@@ -21,7 +21,8 @@ var tabController = new NKTabBarController();
 tabController.setTabBarForPage("main.html", "Main", "book32.png");
 tabController.setTabBarForPage("pickerview.html", "Picker", "book32.png");
 tabController.setTabBarForPage("prompt.html", "Prompt", "book32.png");
-tabController.setTabBarForPage("table.html", "Tab 4", "book32.png");
+tabController.setTabBarForPage("table.html", "Table", "book32.png");
+tabController.setTabBarForPage("search.html", "Search", "book32.png");
 
 
 // NKRegisterClass's
@@ -36,6 +37,7 @@ NKRegisterClass("deShadow");
 NKRegisterClass("buttonlessAlert");
 NKRegisterClass("navSpinner");
 NKRegisterClass("flashLight");
+NKRegisterClass("segment");
 
 // Battery Status
 function alertPower()
@@ -65,20 +67,36 @@ function showButtonlessAlert()
     setTimeout( "hideButtonlessAlert();", 5000); 
 }
 
-// ... and then hide it as we don't have any buttons(!)
-function hideButtonlessAlert()
+    // ... and then hide it as we don't have any buttons(!)
+    function hideButtonlessAlert()
+    {
+        NKLog("hideButtonlessAlert Called");
+        CallNKitAction('hideButtonless?className=buttonlessAlert');
+    }
+
+
+// Show a buttonless alert...
+function showSegmentedControl()
 {
-    NKLog("hideButtonlessAlert Called");
-    CallNKitAction('hideButtonless?className=buttonlessAlert');
+    CallNKitAction('showSegment?className=segment');
+    //setTimeout( "hideButtonlessAlert();", 5000); 
 }
 
+    // aaand Remove it...
+    function removeSegmentedControl()
+    {
+        CallNKitAction('removeSegmentedControl?className=segment');
+    }
+  
+    
+        
 </script>
 
 
 <ul>
 
 <!--<li><a href="#" onClick="CallNKitAction('showAlert?className=MyObjective')">Show Alert</a></li>-->
-<li><a href="#" onClick="CallNKitAction('CustomAlert?className=CustomAlert')">Show Custom</a></li>
+<!--<li><a href="#" onClick="CallNKitAction('CustomAlert?className=CustomAlert')">Show Custom</a></li>-->
 <li><a href="#" onClick="CallNKitAction('showActivityIndicator?className=ActivityIndicator')">Show Status Bar Activity Indicator</a></li>
 <li><a href="#" onClick="CallNKitAction('hideActivityIndicator?className=ActivityIndicator')">Hide Status Bar Activity Indicator</a></li>
 <li><a href="#" onClick="alertPower()">Get Battery Level</a></li>
@@ -101,6 +119,9 @@ function hideButtonlessAlert()
 <li><a href="#" onClick="showButtonlessAlert()">Show Buttonless Alert</a></li>
 <li><a href="#" onClick="CallNKitAction('showSpinner?className=navSpinner')">Show NavBar Spinner</a></li>
 -->
+<li><a href="#" onClick="showButtonlessAlert()">Show Buttonless Alert</a></li>
+<li><a href="#" onClick="showSegmentedControl()">Show Segmented Control</a></li>
+<li><a href="#" onClick="removeSegmentedControl()">Remove Segmented Control</a></li>
 </ul>
 </body>
 </html>

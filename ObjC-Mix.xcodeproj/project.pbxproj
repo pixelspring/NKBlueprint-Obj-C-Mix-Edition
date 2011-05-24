@@ -28,6 +28,14 @@
 		1E733F4D1382EC3F00292604 /* navSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E733F4C1382EC3F00292604 /* navSpinner.m */; };
 		1E919A221347263400820EFF /* prompt.html in Resources */ = {isa = PBXBuildFile; fileRef = 1E919A211347263400820EFF /* prompt.html */; };
 		1E91B88812EAF73F008FF06A /* battery.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E91B88712EAF73F008FF06A /* battery.m */; };
+		1E9F26BA138ACDD400087125 /* search.html in Resources */ = {isa = PBXBuildFile; fileRef = 1E9F26B9138ACDD400087125 /* search.html */; };
+		1E9F26BD138ACED700087125 /* MyUISearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F26BC138ACED700087125 /* MyUISearchBar.m */; };
+		1E9F26C0138BA9F100087125 /* segment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F26BF138BA9F100087125 /* segment.m */; };
+		1E9F26C2138BB47300087125 /* bug24.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E9F26C1138BB47300087125 /* bug24.png */; };
+		1E9F26C4138BB49C00087125 /* brush24.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E9F26C3138BB49C00087125 /* brush24.png */; };
+		1E9F26C6138BB4AE00087125 /* dashboard24.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E9F26C5138BB4AE00087125 /* dashboard24.png */; };
+		1E9F26C9138BC0EE00087125 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E9F26C7138BC0ED00087125 /* Icon.png */; };
+		1E9F26CA138BC0EE00087125 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E9F26C8138BC0EE00087125 /* Icon@2x.png */; };
 		1EA7229A13360EDF00CDC608 /* MyPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA7229913360EDF00CDC608 /* MyPickerController.m */; };
 		1EA722A413360F3900CDC608 /* pickerview.html in Resources */ = {isa = PBXBuildFile; fileRef = 1EA722A313360F3900CDC608 /* pickerview.html */; };
 		1EA84A37137E96230033C6EF /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1EA84A36137E96230033C6EF /* README.txt */; };
@@ -84,6 +92,16 @@
 		1E919A211347263400820EFF /* prompt.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = prompt.html; sourceTree = "<group>"; };
 		1E91B88612EAF73F008FF06A /* battery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = battery.h; path = ../battery.h; sourceTree = "<group>"; };
 		1E91B88712EAF73F008FF06A /* battery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = battery.m; path = ../battery.m; sourceTree = "<group>"; };
+		1E9F26B9138ACDD400087125 /* search.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = search.html; sourceTree = "<group>"; };
+		1E9F26BB138ACED700087125 /* MyUISearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUISearchBar.h; sourceTree = "<group>"; };
+		1E9F26BC138ACED700087125 /* MyUISearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUISearchBar.m; sourceTree = "<group>"; };
+		1E9F26BE138BA9F000087125 /* segment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = segment.h; sourceTree = "<group>"; };
+		1E9F26BF138BA9F100087125 /* segment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = segment.m; sourceTree = "<group>"; };
+		1E9F26C1138BB47300087125 /* bug24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bug24.png; sourceTree = "<group>"; };
+		1E9F26C3138BB49C00087125 /* brush24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brush24.png; sourceTree = "<group>"; };
+		1E9F26C5138BB4AE00087125 /* dashboard24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dashboard24.png; sourceTree = "<group>"; };
+		1E9F26C7138BC0ED00087125 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		1E9F26C8138BC0EE00087125 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		1EA7229813360EDF00CDC608 /* MyPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPickerController.h; sourceTree = "<group>"; };
 		1EA7229913360EDF00CDC608 /* MyPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPickerController.m; sourceTree = "<group>"; };
 		1EA722A313360F3900CDC608 /* pickerview.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = pickerview.html; sourceTree = "<group>"; };
@@ -166,6 +184,10 @@
 				1E733F4C1382EC3F00292604 /* navSpinner.m */,
 				1E3A94B71385324B003A53AB /* flashLight.h */,
 				1E3A94B81385324B003A53AB /* flashLight.m */,
+				1E9F26BB138ACED700087125 /* MyUISearchBar.h */,
+				1E9F26BC138ACED700087125 /* MyUISearchBar.m */,
+				1E9F26BE138BA9F000087125 /* segment.h */,
+				1E9F26BF138BA9F100087125 /* segment.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -185,6 +207,8 @@
 				1E312974135A043700C4D881 /* Default@2x.png */,
 				1E312972135A043200C4D881 /* Default.png */,
 				1E312989135A098B00C4D881 /* nk_background.png */,
+				1E9F26C7138BC0ED00087125 /* Icon.png */,
+				1E9F26C8138BC0EE00087125 /* Icon@2x.png */,
 				BEAC17B20F98BE3900A76568 /* HTML */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -245,8 +269,12 @@
 				1EA722A313360F3900CDC608 /* pickerview.html */,
 				1E919A211347263400820EFF /* prompt.html */,
 				1EDFAE9B1377E1640094CCC8 /* table.html */,
+				1E9F26B9138ACDD400087125 /* search.html */,
 				1E2633FA1342483200C22494 /* style.css */,
 				1E312979135A049B00C4D881 /* wbg.png */,
+				1E9F26C1138BB47300087125 /* bug24.png */,
+				1E9F26C3138BB49C00087125 /* brush24.png */,
+				1E9F26C5138BB4AE00087125 /* dashboard24.png */,
 			);
 			name = HTML;
 			sourceTree = "<group>";
@@ -313,6 +341,12 @@
 				1E31298A135A098B00C4D881 /* nk_background.png in Resources */,
 				1EDFAE9C1377E1640094CCC8 /* table.html in Resources */,
 				1EA84A37137E96230033C6EF /* README.txt in Resources */,
+				1E9F26BA138ACDD400087125 /* search.html in Resources */,
+				1E9F26C2138BB47300087125 /* bug24.png in Resources */,
+				1E9F26C4138BB49C00087125 /* brush24.png in Resources */,
+				1E9F26C6138BB4AE00087125 /* dashboard24.png in Resources */,
+				1E9F26C9138BC0EE00087125 /* Icon.png in Resources */,
+				1E9F26CA138BC0EE00087125 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +371,8 @@
 				1E733F4A1382EA4700292604 /* buttonlessAlert.m in Sources */,
 				1E733F4D1382EC3F00292604 /* navSpinner.m in Sources */,
 				1E3A94B91385324B003A53AB /* flashLight.m in Sources */,
+				1E9F26BD138ACED700087125 /* MyUISearchBar.m in Sources */,
+				1E9F26C0138BA9F100087125 /* segment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
