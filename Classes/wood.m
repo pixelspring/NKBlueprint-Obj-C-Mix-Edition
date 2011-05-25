@@ -25,7 +25,7 @@
 
 //****************************************************************
 // Globally Add Image To UITabBar 
-// !!! Currently only works when built with Xcode 3 !!!
+// !!! Only shows on Device, not Simulator !!!
 //****************************************************************
 
 @implementation UITabBar (CustomBackground)
@@ -37,6 +37,11 @@
 
 @end
 
+
+
+//****************************************************************
+// Background for UISearchBar (translucent)
+//****************************************************************
 
 @implementation UISearchBar (CustomBackground)
 
