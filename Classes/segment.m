@@ -12,23 +12,12 @@
 
 @implementation segment
 
-@synthesize _webView, result;
+@synthesize _webView;
 
-UILabel *label;
 UISegmentedControl *segmentedControl;
 
 - (void)showSegment
 {
-
-        // Quickly Create & Show a basic UILabel to display "SegmentWithTitle" titles
-        label = [[UILabel alloc] init]; 
-        label.frame = CGRectMake(10, 10, 300, 40);
-        label.textAlignment = UITextAlignmentCenter;
-        label.adjustsFontSizeToFitWidth=YES;
-        label.text=@"Select An Option On The Segmented Control To Show It Here";
-        [_webView addSubview:label];
-    
-      
 // ********************************************************************************************************
 // Set up the Segmented Control
 // ********************************************************************************************************     
@@ -53,7 +42,7 @@ segmentedControl.segmentedControlStyle = UISegmentedControlStylePlain;          
 // ********************************************************************************************************                                       
 
 // Plain ol' text
-[segmentedControl insertSegmentWithTitle: @"1" atIndex: 0 animated: YES];
+[segmentedControl insertSegmentWithTitle: @"One" atIndex: 0 animated: YES];
 [segmentedControl insertSegmentWithTitle: @"2" atIndex: 1 animated: YES];
 
 // Images
@@ -73,37 +62,33 @@ segmentedControl.selectedSegmentIndex = 2; // Show Segment as default. NB - Inde
 // Add the Segmented Control to your webView
 [_webView addSubview: segmentedControl];
 [segmentedControl release];
-[label release];
 }
 
 
 
 // ********************************************************************************************************
-// Called when segment pressed, shows an alert or UILabel (currently UILabel, change with comments)
-// TODO: Add method(s) to retrieve selected segment via Obj-C/.js Mix
+// Called when segment pressed, send selected segment via Obj-C/.js Mix
+// Using the correct String Format Specifier makes all the difference ;) 
+// http://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/Strings/Articles/formatSpecifiers.html
 // ********************************************************************************************************
+
 - (void) segmentPressed:(id)sender{
-	UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
-
-    label.text = [segmentedControl titleForSegmentAtIndex: [segmentedControl selectedSegmentIndex]];
-	
-    //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"UISegmentedControl" message:@"Segment Pressed"
-    //                                          delegate:self cancelButtonTitle:@"OK!" otherButtonTitles:nil];
-    //[alert show];
-    //[alert release];
-}
+ UISegmentedControl *segmentedControl = (UISegmentedControl *)sender; 
+ NSString *segSelected = [NSString stringWithFormat:@"%d", segmentedControl.selectedSegmentIndex];
+ [_webView performSelectorOnMainThread:@selector(stringByEvaluatingJavaScriptFromString:) withObject:[NSString stringWithFormat:@"segmentUpdated('%@');", segSelected] waitUntilDone:NO];
+ }
 
 
 // ********************************************************************************************************
-// Trying to figure out how to add/remove via .js call... WIP!
+// Need to figure out how to add/remove via .js call... WIP!
 // ********************************************************************************************************
 /*
 - (void) addSegment{
-	[segmentedControl insertSegmentWithTitle: @"**" atIndex: ** animated: **];
+	[segmentedControl insertSegmentWithTitle: @"*?*" atIndex: *?* animated: YES];
 }
 
 - (void) removeSegment{
-	[segmentedControl removeSegmentWithTitle: @"**" atIndex: ** animated: **];
+	[segmentedControl removeSegmentWithTitle: @"*?*" atIndex: *?* animated: YES];
 }
 
  - (void) removeAllSegments{
@@ -113,10 +98,14 @@ segmentedControl.selectedSegmentIndex = 2; // Show Segment as default. NB - Inde
 // ********************************************************************************************************
 
 
+// ********************************************************************************************************
+// Remove the segment
+// ********************************************************************************************************
 - (void) removeSegmentedControl{
 	[segmentedControl removeFromSuperview];
-    [label removeFromSuperview];    // If using the UILabel to show results, remove it also...
 }
+
+
 
 
 #pragma mark -

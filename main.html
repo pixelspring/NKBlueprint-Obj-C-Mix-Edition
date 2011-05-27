@@ -13,7 +13,7 @@ NKSetPageOpaque('main.html', 'NO');
 
 
 var navController = new NKNavigationController();
-navController.setTitle("Objective-C Tests");
+navController.setTitle("Obj-C Tests");
 navController.setTintColor(0, 0, 0);
 
 
@@ -37,7 +37,6 @@ NKRegisterClass("deShadow");
 NKRegisterClass("buttonlessAlert");
 NKRegisterClass("navSpinner");
 NKRegisterClass("flashLight");
-NKRegisterClass("segment");
 
 // Battery Status
 function alertPower()
@@ -74,54 +73,36 @@ function showButtonlessAlert()
         CallNKitAction('hideButtonless?className=buttonlessAlert');
     }
 
-
-// Show a buttonless alert...
-function showSegmentedControl()
-{
-    CallNKitAction('showSegment?className=segment');
-    //setTimeout( "hideButtonlessAlert();", 5000); 
-}
-
-    // aaand Remove it...
-    function removeSegmentedControl()
-    {
-        CallNKitAction('removeSegmentedControl?className=segment');
-    }
-  
-    
-        
 </script>
 
 
 <ul>
 
-<!--<li><a href="#" onClick="CallNKitAction('showAlert?className=MyObjective')">Show Alert</a></li>-->
-<!--<li><a href="#" onClick="CallNKitAction('CustomAlert?className=CustomAlert')">Show Custom</a></li>-->
-<li><a href="#" onClick="CallNKitAction('showActivityIndicator?className=ActivityIndicator')">Show Status Bar Activity Indicator</a></li>
-<li><a href="#" onClick="CallNKitAction('hideActivityIndicator?className=ActivityIndicator')">Hide Status Bar Activity Indicator</a></li>
-<li><a href="#" onClick="alertPower()">Get Battery Level</a></li>
-<li><a href="#" onClick="CallNKitAction('addLeftButton?className=leftButton')">Show Left Button</a></li>
-<li><a href="#" onClick="getLocale()">Get Locale</a></li>
-<li><a href="#" onClick="getLocation()">Get Location</a></li>
-<li><a href="#" onClick="CallNKitAction('dummy?className=deShadow')">Remove UIWebView Shadow</a></li>
+<!--<li><a onClick="CallNKitAction('showAlert?className=MyObjective')">Show Alert</a></li>-->
+<!--<li><a onClick="CallNKitAction('CustomAlert?className=CustomAlert')">Show Custom</a></li>-->
+<li><a onClick="CallNKitAction('showActivityIndicator?className=ActivityIndicator')">Show Status Bar Activity Indicator</a></li>
+<li><a onClick="CallNKitAction('hideActivityIndicator?className=ActivityIndicator')">Hide Status Bar Activity Indicator</a></li>
+<li><a onClick="alertPower()">Get Battery Level</a></li>
+<li><a onClick="CallNKitAction('addLeftButton?className=leftButton')">Show Left Button</a></li>
+<li><a onClick="getLocale()">Get Locale</a></li>
+<li><a onClick="getLocation()">Get Location</a></li>
+<li><a onClick="CallNKitAction('dummy?className=deShadow')">Remove UIWebView Shadow</a></li>
 
 <!-- ********************************************************
 <--- NEED TO ADD CHECK FOR OS VERSION & DEVICE CAPABILITY
-<--- This will ONLY run on device and will crash simulator
+<--- This will ONLY run on device and will crash simulator!
 <--- ********************************************************-->
-<li><a href="#" onClick="CallNKitAction('flashOn?className=flashLight')">Flashlight On</a></li>
-<li><a href="#" onClick="CallNKitAction('flashOff?className=flashLight')">Flashlight Off</a></li>
+<li><a onClick="CallNKitAction('flashOn?className=flashLight')">Flashlight On</a></li>
+<li><a onClick="CallNKitAction('flashOff?className=flashLight')">Flashlight Off</a></li>
 
 <!-- ********************************************************
 <--- NOT YET WORKING and/or CRASHY
 <--- Please feel free to fix ;)
 <--- ********************************************************
-<li><a href="#" onClick="showButtonlessAlert()">Show Buttonless Alert</a></li>
-<li><a href="#" onClick="CallNKitAction('showSpinner?className=navSpinner')">Show NavBar Spinner</a></li>
+<li><a onClick="showButtonlessAlert()">Show Buttonless Alert</a></li>
+<li><a onClick="CallNKitAction('showSpinner?className=navSpinner')">Show NavBar Spinner</a></li>
 -->
-<li><a href="#" onClick="showButtonlessAlert()">Show Buttonless Alert</a></li>
-<li><a href="#" onClick="showSegmentedControl()">Show Segmented Control</a></li>
-<li><a href="#" onClick="removeSegmentedControl()">Remove Segmented Control</a></li>
+<li><a onClick="navController.gotoPage('segmentedcontrol.html')">Segmented Control</a></li>
 </ul>
 </body>
 </html>

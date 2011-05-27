@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no" />
+<link rel="stylesheet" href="style.css" type="text/css">
+<script type="text/javascript" src="NKit.js"></script>
+        
+<script>
+var navController = new NKNavigationController();
+navController.setTitle("Segmented Control");
+
+// Register the segmented control class
+NKRegisterClass("segment");
+</script>
+</head>
+
+
+<body style="margin-top:75px">
+        
+<script>
+            
+    // Show the Segmented Control...
+    function showSegmentedControl()
+    {
+        CallNKitAction('showSegment?className=segment');
+    }
+    
+    // aaand Remove it... 
+    function removeSegmentedControl()
+    {
+        CallNKitAction('removeSegmentedControl?className=segment');
+    }
+    
+    // Called when user changes the segmented control
+    function segmentUpdated(segSelected)
+    {
+        // DO SOMETHING HERE
+        NKAlert("via the mysterious magical witchcraft of NimbleKit's Objective-C/js mix, we can deduce that you pressed segment index...\n\n\n\n", segSelected);
+    }
+    
+</script>
+        
+<br><br><br><br><br><br><br> <!-- Bit chilly in here! -->     
+<div class="greybutton" onClick="showSegmentedControl()">Show Segmented Control</div>
+<div class="greybutton"a onClick="removeSegmentedControl()">Remove Segmented Control</div>
+        
+        
+</body>
+</html>

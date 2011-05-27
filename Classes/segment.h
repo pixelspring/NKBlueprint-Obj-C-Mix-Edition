@@ -11,11 +11,11 @@
 
 @interface segment : NSObject {
 	UIWebView* _webView;
-    NSString* result;
+    //NSString* result;
     
 }
 
 @property (retain) UIWebView* _webView;
-@property (retain) NSString* result;
+//@property (retain) NSString* result;
 
 @end
