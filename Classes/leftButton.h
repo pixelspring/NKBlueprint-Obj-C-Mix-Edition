@@ -6,11 +6,15 @@
 //  Copyright 2011 Mike Seaby. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 
 @interface leftButton : NSObject {
-
+    UIWebView *webView;
+    NSString *currentPage;
 }
+
+@property (nonatomic, assign) UIWebView *webView;
+@property (retain) NSString *currentPage;
 
 @end

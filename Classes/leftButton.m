@@ -7,25 +7,19 @@
 //
 
 #import "leftButton.h"
-
-UIBarButtonItem *button;
-UINavigationController *controller;
-UIAlertView *alert;
+#import "NKBridge.h"
 
 @implementation leftButton
 
+@synthesize webView, currentPage;
+
 - (void)addLeftButton {
-	controller = [[NSClassFromString(@"NKBridge") sharedInstance]
-	navigationControllerForPage:@"main.html"];
+	UINavigationController *controller = [[NKBridge sharedInstance] navigationControllerForPage:self.currentPage];
+	
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Button" style:UIBarButtonItemStylePlain target:self action:@selector(buttonClicked:)];
     
-	button = [[UIBarButtonItem alloc]
-    initWithTitle:@"Button"
-	style:UIBarButtonItemStylePlain 
-    
-    target:self action:@selector(buttonClicked:)];
-    
-    //button =  UIBarButtonSystemItemDone;
-    
+	//    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"imagename.png"] style:UIBarButtonItemStylePlain target:self action:@selector(buttonClicked:)]; // in case you want image there
+	
 	controller.visibleViewController.navigationItem.leftBarButtonItem = button;
     
     // ********************************************************************************************************
@@ -62,18 +56,22 @@ UIAlertView *alert;
 	
 }
 
-// Called when left button pressed
+- (void)removeLeftButton {
+    UINavigationController *controller = [[NKBridge sharedInstance] navigationControllerForPage:self.currentPage];
+	controller.visibleViewController.navigationItem.leftBarButtonItem = nil;
+}
+
+- (void)setNKWebView:(UIWebView*)view {
+    self.webView = view;
+}
+
+- (void)setNKCurrentPage:(NSString*)page {
+    self.currentPage = page;
+}
+
 - (void) buttonClicked:(id)sender{
-	button = (UIBarButtonItem *)sender;
 	
-    alert = [[UIAlertView alloc] initWithTitle:@"Left Bar Button!" message:@"You Pressed It!"
-                                                   delegate:self cancelButtonTitle:@"OK!" otherButtonTitles:nil];
-    [alert show];
-    [alert release];
-    
-    // ********************************************************************************************************
-    // TODO: Add method to return button press to javascript
-    // ********************************************************************************************************
+    [self.webView performSelectorOnMainThread:@selector(stringByEvaluatingJavaScriptFromString:) withObject:[NSString stringWithFormat:@"leftButtonClicked()"] waitUntilDone:NO];
 }
 
 @end
