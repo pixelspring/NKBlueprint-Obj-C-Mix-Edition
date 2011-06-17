@@ -33,16 +33,20 @@ NKRegisterClass("battery");
 NKRegisterClass("leftButton");
 NKRegisterClass("locale");
 NKRegisterClass("deShadow");
+NKRegisterClass("flashLight");
 
 NKRegisterClass("buttonlessAlert");
 NKRegisterClass("navSpinner");
-NKRegisterClass("flashLight");
+NKRegisterClass("screenShot");
+
+
 
 // Battery Status
 function alertPower()
 {
-	var batteryLevel = CallNKitAction('getBatteryLevel?className=battery&sync=yes'); 
-	NKAlert("Battery at:", batteryLevel);
+	var batteryLevel = CallNKitAction('getBatteryLevel?className=battery&sync=yes');
+    batteryLevel = batteryLevel.slice(1, -9);
+	NKAlert("Battery at:", batteryLevel+"%");
 }
 
 // Get Currency Symbol
@@ -58,6 +62,15 @@ function getLocation()
     var locale = CallNKitAction('getLocation?className=locale&sync=yes');
     NKAlert("Your Device Country Code Is:", locale);
 }
+
+
+// Get Left Button Tap
+function leftButtonClicked()
+{
+	NKLog("Left Button Clicked");
+	NKAlert("Your Left Button Has...", "Been Clicked!");
+}
+
 
 // Show a buttonless alert...
 function showButtonlessAlert()
@@ -84,6 +97,7 @@ function showButtonlessAlert()
 <li><a onClick="CallNKitAction('hideActivityIndicator?className=ActivityIndicator')">Hide Status Bar Activity Indicator</a></li>
 <li><a onClick="alertPower()">Get Battery Level</a></li>
 <li><a onClick="CallNKitAction('addLeftButton?className=leftButton')">Show Left Button</a></li>
+<li><a onClick="CallNKitAction('removeLeftButton?className=leftButton')">Hide Left Button</a></li>
 <li><a onClick="getLocale()">Get Locale</a></li>
 <li><a onClick="getLocation()">Get Location</a></li>
 <li><a onClick="CallNKitAction('dummy?className=deShadow')">Remove UIWebView Shadow</a></li>
@@ -95,14 +109,19 @@ function showButtonlessAlert()
 <li><a onClick="CallNKitAction('flashOn?className=flashLight')">Flashlight On</a></li>
 <li><a onClick="CallNKitAction('flashOff?className=flashLight')">Flashlight Off</a></li>
 
+<li><a onClick="navController.gotoPage('segmentedcontrol.html')">Segmented Control</a></li>
+<li><a onClick="navController.gotoPage('listfiles.html')">Get Files In Documents Folder</a></li>
+
 <!-- ********************************************************
 <--- NOT YET WORKING and/or CRASHY
 <--- Please feel free to fix ;)
 <--- ********************************************************
 <li><a onClick="showButtonlessAlert()">Show Buttonless Alert</a></li>
-<li><a onClick="CallNKitAction('showSpinner?className=navSpinner')">Show NavBar Spinner</a></li>
+
 -->
-<li><a onClick="navController.gotoPage('segmentedcontrol.html')">Segmented Control</a></li>
+<li><a onClick="CallNKitAction('showSpinner?className=navSpinner')">Show NavBar Spinner</a></li>
+<li><a onClick="CallNKitAction('stopSpinner?className=navSpinner')">Remove NavBar Spinner</a></li>
+<li><a onClick="CallNKitAction('saveScreenshot?className=screenShot')">Take ScreenShot</a></li>
 </ul>
 </body>
 </html>

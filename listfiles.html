@@ -1,0 +1,91 @@
+<html>
+<head>
+<meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no" />
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+<script type="text/javascript" src="NKit.js"></script>
+
+<script>
+
+NKSetPageOpaque('listfiles.html', 'NO');
+
+
+var navController = new NKNavigationController();
+navController.setTitle("List Files");
+navController.setTintColor(0, 0, 0);
+
+	NKRegisterClass('listFilesInDocumentsFolder'); // Register our Obj-C class
+	
+	var download = false;
+	function downLoadSomeFile() { // this downloads the nimblekit documentation and stores it under a random name, to make things more interesting
+		if (download && download.getProgress()<100)
+		NKLog('Easy, I\'m still downloading! Please wait a moment...');
+		else {
+			download = new NKFileDownloader();
+			download.openURL("http://nimblekit.com/supportfiles/NimbleKitDoc.pdf");
+			randfilename = randomstring(5)+".pdf";
+			download.start(randfilename);
+			NKLog('Downloading and storing locally with file name: '+randfilename);
+			setTimeout(updateProgress, 500);
+		}
+	}
+	
+	function updateProgress() {
+		var progress = download.getProgress();
+		if (progress == -1) {
+			NKLog("Could not download file");
+		} else {
+			NKLog("downloaded: "+progress+"%");
+			if (download.getProgress()<100)
+			setTimeout(updateProgress, 500);
+			else
+			downloadDone();
+		}
+	}
+	
+	function randomstring(L){
+		var s= '';
+		var randomchar=function(){
+			var n= Math.floor(Math.random()*62);
+			if(n<10) return n; //1-10
+			if(n<36) return String.fromCharCode(n+55); //A-Z
+			return String.fromCharCode(n+61); //a-z
+		}
+		while(s.length< L) s+= randomchar();
+		return s;
+	}
+	
+	function downloadDone() {
+		NKLog('download done!');
+	}
+	
+	function getContentsFromObjCMix() {
+		// this will fetch the documents directory content and store it (magically) into the an array called "documentsDirectoryContent"
+		CallNKitAction('doList?className=listFilesInDocumentsFolder')
+	}
+	
+	function printContentsNow() {
+		// at this point, the documentsDirectoryContent should have been created and filled with the files
+		if (typeof(documentsDirectoryContent)=='undefined') // warning in case documentsDirectoryContent does not exist
+		NKLog("Error! Did you fetch the directory contents yet?");
+		else {
+			if (documentsDirectoryContent.length == 0) // no files in the directory
+			NKLog("Looks like there are no files in your document folder...");
+			else { // iterate through array to print file names
+				for (i=0; i<documentsDirectoryContent.length; i++) {
+					NKLog('File '+(i+1)+': '+documentsDirectoryContent[i]);
+				}
+			}
+		}
+	}
+	
+	</script>
+	</head>
+	<body>
+		<div class="greybutton" onClick="javascript:downLoadSomeFile()">1. Populate document directory (repeat if you want)</a></div>
+		<div class="greybutton" onClick="javascript:getContentsFromObjCMix()">2. Get file list from our custom Obj-C class</a></div>
+		<div class="greybutton" onClick="javascript:printContentsNow()">3. List directory contents(NKLog, see console)</a></div>
+	</body>
+</html>
