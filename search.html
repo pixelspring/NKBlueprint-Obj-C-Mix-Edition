@@ -23,9 +23,15 @@ CallNKitAction("showSearchBar?className=MyUISearchBar");
         $("#container").html(searchValue);
     }
     
+    /*
     function searchButtonClicked()
     {
         CallNKitAction("dismissKeyboard?className=MyUISearchBar");
+    }
+    */
+    
+    function searchButtonClicked(text) {
+        NKLog("Search Query: " + text);
     }
     
 </script>

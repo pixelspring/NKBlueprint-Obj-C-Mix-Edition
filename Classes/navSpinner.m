@@ -7,28 +7,67 @@
 //
 
 #import "navSpinner.h"
-
+#import "NKBridge.h"
 
 @implementation navSpinner
 
-- (void)showSpinner {
+@synthesize _navigationController, webView, currentPage;
 
-    UINavigationController *controller = [[NSClassFromString(@"NKBridge") sharedInstance]
-    navigationControllerForPage:@"main.html"];
+/*
+- (void)setNKCurrentPage:(NSString*)pageTitle {
+	self._thisPage = pageTitle;
+	self._navigationController = [[NSClassFromString(@"NKBridge") sharedInstance] navigationControllerForPage:self._thisPage];
+}
+*/
+
+/*
+- (void)showSpinner {
+    // Blah *****
+    navController = [[NSClassFromString(@"NKBridge") sharedInstance]navigationControllerForPage:@"main.html"];
     
-    UIActivityIndicatorView *activityIndicator = 
-    [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    UIBarButtonItem * barButton = 
-    [[UIBarButtonItem alloc] initWithCustomView:activityIndicator];
+	UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:activityIndicator];
     
-    // Set to Left or Right
-    [[self navigationItem] setRightBarButtonItem:barButton];
+	navController.visibleViewController.navigationItem.rightBarButtonItem = barButton;
     
     [barButton release];
     [activityIndicator startAnimating];
+    [activityIndicator release];
+    // Blah *****
     
     
+    UIView *activityView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 33, 20)] autorelease];
+    UIActivityIndicatorView *activityIndicator = [[[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)] autorelease];
+    [activityView addSubview:activityIndicator];
+    [activityIndicator startAnimating];
+    self._navigationController.visibleViewController.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithCustomView:activityView] autorelease];
     
+}
+*/
+
+
+- (void)showSpinner {
+	
+	UINavigationController *controller = [[NKBridge sharedInstance] navigationControllerForPage:self.currentPage];
+
+	UIView *activityView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 33, 20)] autorelease]; // add spinner via view so its position can be tuned. use the third value in CGRectMake to fine tune the horizontal position of the spinner
+	UIActivityIndicatorView *activityIndicator = [[[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)] autorelease];
+	[activityView addSubview:activityIndicator];
+	[activityIndicator startAnimating];
+	self._navigationController.visibleViewController.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithCustomView:activityView] autorelease];
+}
+
+
+- (void)stopSpinner {
+    
+    /*
+    [[self navController] setRightBarButtonItem:nil];
+    navController.visibleViewController.navigationItem.rightBarButtonItem;nil;
+    [activityIndicator stopAnimating];
+    [activityIndicator release];*/
+    //[activityIndicator removeFromSuperView];
+    
+    self._navigationController.visibleViewController.navigationItem.rightBarButtonItem = nil;
 }
 
 @end

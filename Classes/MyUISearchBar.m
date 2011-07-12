@@ -117,9 +117,12 @@
 {
 	[_webView performSelectorOnMainThread:@selector(stringByEvaluatingJavaScriptFromString:) withObject:@"searchButtonClicked();" waitUntilDone:NO];	
 }
-
-
-
+/*
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [_webView performSelectorOnMainThread:@selector(stringByEvaluatingJavaScriptFromString:) withObject:[NSString stringWithFormat:@"searchButtonClicked(\"%@\");", _searchBar.text] waitUntilDone:NO];
+    [_searchBar resignFirstResponder];
+}
+*/
 #pragma mark -
 #pragma mark automatic setter methods
 

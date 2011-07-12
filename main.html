@@ -39,6 +39,8 @@ NKRegisterClass("buttonlessAlert");
 NKRegisterClass("navSpinner");
 NKRegisterClass("screenShot");
 
+NKRegisterClass("getFreeSpace");
+
 
 
 // Battery Status
@@ -86,6 +88,18 @@ function showButtonlessAlert()
         CallNKitAction('hideButtonless?className=buttonlessAlert');
     }
 
+
+function getSpace()
+{
+	var freeSpace = CallNKitAction('getDeviceFreeSpace?className=getFreeSpace&sync=yes');
+	
+	// Dirty method to convert bytes to GB. You might want to refine this to use MB etc.
+	freeSpace = freeSpace/(1024*1024*1024);	// Convert Bytes to Gigabytes
+	gigVal=Math.round(freeSpace*10)/10;		// Round to 1 decimal place
+	
+	NKAlert("You have:", gigVal+" GB of free space remaining on your iDevice");
+}
+
 </script>
 
 
@@ -105,23 +119,25 @@ function showButtonlessAlert()
 <!-- ********************************************************
 <--- NEED TO ADD CHECK FOR OS VERSION & DEVICE CAPABILITY
 <--- This will ONLY run on device and will crash simulator!
-<--- ********************************************************-->
+<--- ******************************************************** -->
 <li><a onClick="CallNKitAction('flashOn?className=flashLight')">Flashlight On</a></li>
 <li><a onClick="CallNKitAction('flashOff?className=flashLight')">Flashlight Off</a></li>
+<!--- ******************************************************* -->
 
 <li><a onClick="navController.gotoPage('segmentedcontrol.html')">Segmented Control</a></li>
 <li><a onClick="navController.gotoPage('listfiles.html')">Get Files In Documents Folder</a></li>
+<li><a onClick="getSpace()">Get Free Space</a></li>
 
 <!-- ********************************************************
 <--- NOT YET WORKING and/or CRASHY
 <--- Please feel free to fix ;)
 <--- ********************************************************
 <li><a onClick="showButtonlessAlert()">Show Buttonless Alert</a></li>
-
--->
 <li><a onClick="CallNKitAction('showSpinner?className=navSpinner')">Show NavBar Spinner</a></li>
 <li><a onClick="CallNKitAction('stopSpinner?className=navSpinner')">Remove NavBar Spinner</a></li>
 <li><a onClick="CallNKitAction('saveScreenshot?className=screenShot')">Take ScreenShot</a></li>
+-->
+
 </ul>
 </body>
 </html>

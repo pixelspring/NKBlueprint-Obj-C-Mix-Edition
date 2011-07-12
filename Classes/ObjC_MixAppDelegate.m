@@ -33,7 +33,7 @@ extern BOOL _mainWebViewLoaded;
 		[[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1]];
 	}
     
-    //sleep(10); // Delay App start by holding the Default.png for 10secs
+    //sleep(10); // Delay App start by holding the Default.png for 10 seconds
     
     // Fancy Fade/Zoom After Load 
     //*********************************
