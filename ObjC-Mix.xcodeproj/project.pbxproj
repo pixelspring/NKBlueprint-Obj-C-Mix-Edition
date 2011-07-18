@@ -11,6 +11,7 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		1E0A643D13D42F1500E117D8 /* checkJailbreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0A643C13D42F1500E117D8 /* checkJailbreak.m */; };
 		1E10ADA113ABAE4800909A64 /* listFilesInDocumentsFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E10ADA013ABAE4800909A64 /* listFilesInDocumentsFolder.m */; };
 		1E10ADA313ABAEC800909A64 /* listfiles.html in Resources */ = {isa = PBXBuildFile; fileRef = 1E10ADA213ABAEC800909A64 /* listfiles.html */; };
 		1E1CDEE612E9FA79003F7976 /* CustomAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1CDEE512E9FA79003F7976 /* CustomAlert.m */; };
@@ -69,6 +70,8 @@
 		1D3623250D0F684500981E51 /* ObjC_MixAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjC_MixAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* ObjC-Mix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ObjC-Mix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1E0A643B13D42F1500E117D8 /* checkJailbreak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = checkJailbreak.h; sourceTree = "<group>"; };
+		1E0A643C13D42F1500E117D8 /* checkJailbreak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = checkJailbreak.m; sourceTree = "<group>"; };
 		1E10AD9F13ABAE4800909A64 /* listFilesInDocumentsFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = listFilesInDocumentsFolder.h; sourceTree = "<group>"; };
 		1E10ADA013ABAE4800909A64 /* listFilesInDocumentsFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = listFilesInDocumentsFolder.m; sourceTree = "<group>"; };
 		1E10ADA213ABAEC800909A64 /* listfiles.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = listfiles.html; sourceTree = "<group>"; };
@@ -173,6 +176,8 @@
 			children = (
 				1D3623240D0F684500981E51 /* ObjC_MixAppDelegate.h */,
 				1D3623250D0F684500981E51 /* ObjC_MixAppDelegate.m */,
+				1E0A643B13D42F1500E117D8 /* checkJailbreak.h */,
+				1E0A643C13D42F1500E117D8 /* checkJailbreak.m */,
 				1ECF7CAA13CC867800EB08E9 /* getFreeSpace.h */,
 				1ECF7CAB13CC867800EB08E9 /* getFreeSpace.m */,
 				1E1CDEE412E9FA79003F7976 /* CustomAlert.h */,
@@ -407,6 +412,7 @@
 				1EF7C7C21393A2A9006AAEF5 /* screenShot.m in Sources */,
 				1E10ADA113ABAE4800909A64 /* listFilesInDocumentsFolder.m in Sources */,
 				1ECF7CAC13CC867800EB08E9 /* getFreeSpace.m in Sources */,
+				1E0A643D13D42F1500E117D8 /* checkJailbreak.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

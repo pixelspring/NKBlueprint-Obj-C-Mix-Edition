@@ -40,6 +40,7 @@ NKRegisterClass("navSpinner");
 NKRegisterClass("screenShot");
 
 NKRegisterClass("getFreeSpace");
+NKRegisterClass("checkJailbreak");
 
 
 
@@ -100,6 +101,26 @@ function getSpace()
 	NKAlert("You have:", gigVal+" GB of free space remaining on your iDevice");
 }
 
+	
+// ************************************************************************
+// Is the device jailbroken?
+//
+// This is a very rudimentary method:
+// If Cydia is present, then the device has obviously been jailbroken but..
+// .. a jailbroken phone dosen't necessarily have Cydia installed!
+// ************************************************************************
+
+function isJailbroken()
+{
+	NKAlert("Cydia Detected", "This device has been jailbroken");
+}
+
+function notJailbroken()
+{
+	NKAlert("Cydia Not Found", "Device probably not jailbroken");
+}
+// ************************************************************************
+
 </script>
 
 
@@ -127,6 +148,7 @@ function getSpace()
 <li><a onClick="navController.gotoPage('segmentedcontrol.html')">Segmented Control</a></li>
 <li><a onClick="navController.gotoPage('listfiles.html')">Get Files In Documents Folder</a></li>
 <li><a onClick="getSpace()">Get Free Space</a></li>
+<li><a onClick="CallNKitAction('checkForJailbreak?className=checkJailbreak')">Check For Jailbreak</a></li>
 
 <!-- ********************************************************
 <--- NOT YET WORKING and/or CRASHY
