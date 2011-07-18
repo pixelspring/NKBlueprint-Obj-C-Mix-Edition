@@ -25,7 +25,10 @@ NKRegisterClass("AlertClass"); //Register the class
             //placeholder: placeholder text displayed in text box
             //jsFunction: javascript function to be called. See example below for proper format
             
-        var action="showAlert?className=AlertClass&title=Prompt Alert&message=Prompt Message\n\n\n&cancel=Cancel&ok=Okay&placeholder=placeholder&jsFunction=buttonPressed('%@')"
+        //var action="showAlert?className=AlertClass&title=Prompt Alert&message=Prompt Message\n\n\n&cancel=Cancel&ok=Okay&placeholder=placeholder&jsFunction=buttonPressed('%@')"
+		
+		var action="showAlert?className=AlertClass&promptPage=prompt.html&title=Prompt Alert&message=Prompt Message\n\n\n&cancel=Cancel&ok=Okay&placeholder=placeholder&jsFunction=buttonPressed('%@')"
+		
             CallNKitAction(action);
         }
         

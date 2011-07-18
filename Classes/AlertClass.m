@@ -39,7 +39,11 @@
     
     if(buttonIndex==1) {
         NSString* jsCode = [NSString stringWithFormat:[_parameters objectForKey:@"jsFunction"],textField.text];
-        UIWebView* view = [[NKBridge sharedInstance] webViewForPage:@"prompt.html"];
+        //UIWebView* view = [[NKBridge sharedInstance] webViewForPage:@"prompt.html"];
+		
+		NSString* getWebPage = [self._parameters objectForKey:@"promptPage"];
+        UIWebView* view = [[NKBridge sharedInstance] webViewForPage:getWebPage];
+		
         [view performSelectorOnMainThread:@selector(stringByEvaluatingJavaScriptFromString:) withObject:jsCode waitUntilDone:YES];
     }
     
