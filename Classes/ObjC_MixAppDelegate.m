@@ -15,7 +15,7 @@ extern BOOL _mainWebViewLoaded;
 
 @implementation ObjC_MixAppDelegate
 
-@synthesize window;
+@synthesize window = _window;
 
 // Fancy Fade/Zoom After Load 
 //*********************************
@@ -26,9 +26,9 @@ extern BOOL _mainWebViewLoaded;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
 
-	Nimble *nimble = [[Nimble alloc] initWithRootPage:@"main.html" window:window serial:@"YOUR_SERIAL_HERE"];
+	Nimble *nimble = [[Nimble alloc] initWithRootPage:@"main.html" window:self.window serial:@"YOUR_SERIAL_HERE"];
 	[nimble release];
-	[window makeKeyAndVisible];
+	[self.window makeKeyAndVisible];
 	while (!_mainWebViewLoaded) {
 		[[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1]];
 	}
@@ -39,11 +39,11 @@ extern BOOL _mainWebViewLoaded;
     //*********************************
     splashView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, 320, 480)];  
     splashView.image = [UIImage imageNamed:@"Default.png"];  
-    [window addSubview:splashView];  
-    [window bringSubviewToFront:splashView];  
+    [self.window addSubview:splashView];  
+    [self.window bringSubviewToFront:splashView];  
     [UIView beginAnimations:nil context:nil];  
     [UIView setAnimationDuration:2.0];  
-    [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:window cache:YES];  
+    [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.window cache:YES];  
     [UIView setAnimationDelegate:self];   
     [UIView setAnimationDidStopSelector:@selector(startupAnimationDone:finished:context:)];  
     splashView.alpha = 0.0;  
@@ -57,7 +57,7 @@ extern BOOL _mainWebViewLoaded;
 }
 
 - (void)dealloc {
-    [window release];
+    [_window release];
     [super dealloc];
 }
 
@@ -76,11 +76,11 @@ extern BOOL _mainWebViewLoaded;
  // The device is an iPad.
  splashView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, 768, 1024)];
  splashView.image = [UIImage imageNamed:@"Default-Portrait.png"];
- [window addSubview:splashView];
- [window bringSubviewToFront:splashView];
+ [self.window addSubview:splashView];
+ [self.window bringSubviewToFront:splashView];
  [UIView beginAnimations:nil context:nil];
  [UIView setAnimationDuration:2.0];
- [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:window cache:YES];
+ [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.window cache:YES];
  [UIView setAnimationDelegate:self]; 
  [UIView setAnimationDidStopSelector:@selector(startupAnimationDone:finished:context:)];
  splashView.alpha = 0.0;
@@ -92,11 +92,11 @@ extern BOOL _mainWebViewLoaded;
  // The device is an iPhone or iPod touch.
  splashView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, 320, 480)];
  splashView.image = [UIImage imageNamed:@"Default.png"];
- [window addSubview:splashView];
- [window bringSubviewToFront:splashView];
+ [self.window addSubview:splashView];
+ [self.window bringSubviewToFront:splashView];
  [UIView beginAnimations:nil context:nil];
  [UIView setAnimationDuration:2.0];
- [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:window cache:YES];
+ [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.window cache:YES];
  [UIView setAnimationDelegate:self]; 
  [UIView setAnimationDidStopSelector:@selector(startupAnimationDone:finished:context:)];
  splashView.alpha = 0.0;
@@ -123,12 +123,12 @@ extern BOOL _mainWebViewLoaded;
   if (!iPad) {
   splashView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, 320, 480)];  
   splashView.image = [UIImage imageNamed:@"Default.png"];  
-  [window addSubview:splashView];  
-  [window bringSubviewToFront:splashView];  
+  [self.window addSubview:splashView];  
+  [self.window bringSubviewToFront:splashView];  
   [UIView beginAnimations:nil context:nil];  
   [UIView setAnimationDuration:.5];  
   [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-  [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:window cache:YES];  
+  [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.window cache:YES];  
   [UIView setAnimationDelegate:self];   
   [UIView setAnimationDidStopSelector:@selector(startupAnimationDone:finished:context:)];  
   splashView.alpha = 0.0;  
@@ -175,12 +175,12 @@ extern BOOL _mainWebViewLoaded;
   
   [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
   
-  [window addSubview:splashView];  
-  [window bringSubviewToFront:splashView];  
+  [self.window addSubview:splashView];  
+  [self.window bringSubviewToFront:splashView];  
   [UIView beginAnimations:nil context:nil];  
   [UIView setAnimationDuration:.5];  
   [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-  [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:window cache:YES];  
+  [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.window cache:YES];  
   [UIView setAnimationDelegate:self];   
   [UIView setAnimationDidStopSelector:@selector(startupAnimationDone:finished:context:)];  
   splashView.alpha = 0.0;  
