@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<script type="text/javascript" src="NKit.js"></script>
+</head>
+	
+	
+	
+	
+<body>
+
+
+
+<script>
+//Register OBJ-C Class for OBJ-C / JS Mix
+NKRegisterClass("TestProjectAppDelegate");
+
+//Calling the method to remove the detectors
+/*
+ Call this on each page you need to remove the detectors, 
+ that way you still can have it on page where it make sense and prevent performance
+ issues by calling this for everything
+ Can be called at any moment on your code as long the NKRegisterClass is already called
+ 
+ //comment this line in ordr to see the detectors active
+ */
+CallNKitAction("removeDetector?className=TestProjectAppDelegate&page=main.html");    
+</script>    
+
+
+
+The numbers below will not have detectors
+<p>212-1234 567</p>
+
+<i>More numbers 123456789</i><br>
+
+
+<p>Links will still have underline because this is standard, just use CSS to remove them :-)</p>
+
+</body>
+</html>
