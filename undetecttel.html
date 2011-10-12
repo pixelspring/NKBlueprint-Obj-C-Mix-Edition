@@ -2,41 +2,36 @@
 <head>
 <meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" href="style.css" type="text/css">
 <script type="text/javascript" src="NKit.js"></script>
 </head>
 	
 	
-	
-	
 <body>
 
-
-
 <script>
-//Register OBJ-C Class for OBJ-C / JS Mix
-NKRegisterClass("TestProjectAppDelegate");
 
-//Calling the method to remove the detectors
-/*
- Call this on each page you need to remove the detectors, 
- that way you still can have it on page where it make sense and prevent performance
- issues by calling this for everything
- Can be called at any moment on your code as long the NKRegisterClass is already called
- 
- //comment this line in ordr to see the detectors active
- */
-CallNKitAction("removeDetector?className=TestProjectAppDelegate&page=main.html");    
+var navController = new NKNavigationController();
+navController.setTitle("Tel. No");
+	
+
+
+function onPageShown(caller) {
+	NKRegisterClass("undetectTel");
+	CallNKitAction("nada?className=undetectTel");
+	NKAlert("Blah", "Blah blah");
+}
+	 
 </script>    
 
 
 
-The numbers below will not have detectors
-<p>212-1234 567</p>
+<h3>The numbers below should not have detectors</h3>
+<p>555-5555 555</p>
 
-<i>More numbers 123456789</i><br>
+<p>More numbers: 123456789</p>
 
-
-<p>Links will still have underline because this is standard, just use CSS to remove them :-)</p>
+<p>Links will still have underline because this is standard Safari behaviour - use CSS to remove them</p>
 
 </body>
 </html>
