@@ -17,6 +17,7 @@
 - (void)drawRect:(CGRect)rect {
 	UIImage *image = [UIImage imageNamed:@"wbg.png"];
 	[image drawInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+	
 }
 
 @end
@@ -32,7 +33,7 @@
 
 - (void)drawRect:(CGRect)rect {
 	UIImage *image = [UIImage imageNamed:@"wbg.png"];
-	[image drawInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+	[image drawInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];	
 }
 
 @end
@@ -51,3 +52,40 @@
 }
 
 @end
+
+
+
+//****************************************************************
+// New iOS 5 custom background methods 
+//****************************************************************
+
+/*
+@interface myNavigationBar : UINavigationBar <UINavigationBarDelegate> {
+}
+@end
+
+@implementation myNavigationBar
+
+- (id)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        // Initialization code
+    }
+    return self;
+}
+
+- (void)drawRect:(CGRect)rect 
+{
+    // ColorSync manipulated image
+    UIImage *imageBackground = [UIImage imageNamed: @"wbg.png"];
+    [imageBackground drawInRect: CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) ];
+}
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    
+}
+
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+}
+
+@end
+*/

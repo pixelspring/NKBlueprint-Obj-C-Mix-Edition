@@ -10,19 +10,19 @@
 <script>
 
 NKSetPageOpaque('main.html', 'NO');
-
-
-var navController = new NKNavigationController();
-navController.setTitle("Obj-C Tests");
-navController.setTintColor(0, 0, 0);
-
-
+	
+	
 var tabController = new NKTabBarController();
 tabController.setTabBarForPage("main.html", "Main", "book32.png");
 tabController.setTabBarForPage("pickerview.html", "Picker", "book32.png");
 tabController.setTabBarForPage("prompt.html", "Prompt", "book32.png");
 tabController.setTabBarForPage("table.html", "Table", "book32.png");
 tabController.setTabBarForPage("search.html", "Search", "book32.png");
+
+var navController = new NKNavigationController();
+navController.setTitle("Obj-C Tests");
+navController.setTintColor(0, 0, 0);
+
 
 
 // NKRegisterClass's
@@ -41,7 +41,6 @@ NKRegisterClass("screenShot");
 
 NKRegisterClass("getFreeSpace");
 NKRegisterClass("checkJailbreak");
-
 
 
 // Battery Status
@@ -141,8 +140,8 @@ function notJailbroken()
 <--- NEED TO ADD CHECK FOR OS VERSION & DEVICE CAPABILITY
 <--- This will ONLY run on device and will crash simulator!
 <--- ******************************************************** -->
-<li><a onClick="CallNKitAction('flashOn?className=flashLight')">Flashlight On</a></li>
-<li><a onClick="CallNKitAction('flashOff?className=flashLight')">Flashlight Off</a></li>
+<li><a onClick="CallNKitAction('flashOn?className=flashLight')">Flashlight On <i>(Device Only)</i></a></li>
+<li><a onClick="CallNKitAction('flashOff?className=flashLight')">Flashlight Off <i>(Device Only)</i></a></li>
 <!--- ******************************************************* -->
 
 <li><a onClick="navController.gotoPage('segmentedcontrol.html')">Segmented Control</a></li>
@@ -150,6 +149,7 @@ function notJailbroken()
 <li><a onClick="getSpace()">Get Free Space</a></li>
 <li><a onClick="CallNKitAction('checkForJailbreak?className=checkJailbreak')">Check For Jailbreak</a></li>
 <li><a onClick="navController.gotoPage('undetecttel.html')">Tel. No. Detection</a></li>
+<li><a onClick="navController.gotoPage('urlschemas.html')">URL Schemas</a></li>
 
 <!-- ********************************************************
 <--- NOT YET WORKING and/or CRASHY

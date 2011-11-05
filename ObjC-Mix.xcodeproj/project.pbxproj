@@ -46,6 +46,8 @@
 		1EA84A37137E96230033C6EF /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1EA84A36137E96230033C6EF /* README.txt */; };
 		1ECBCC3E138FB1CF0062D8F4 /* segmentedcontrol.html in Resources */ = {isa = PBXBuildFile; fileRef = 1ECBCC3D138FB1CF0062D8F4 /* segmentedcontrol.html */; };
 		1ECF7CAC13CC867800EB08E9 /* getFreeSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECF7CAB13CC867800EB08E9 /* getFreeSpace.m */; };
+		1ED63A8214658E350035B7F3 /* myscheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED63A8114658E350035B7F3 /* myscheme.m */; };
+		1ED63A8414658E820035B7F3 /* urlschemas.html in Resources */ = {isa = PBXBuildFile; fileRef = 1ED63A8314658E820035B7F3 /* urlschemas.html */; };
 		1EDFAE9C1377E1640094CCC8 /* table.html in Resources */ = {isa = PBXBuildFile; fileRef = 1EDFAE9B1377E1640094CCC8 /* table.html */; };
 		1EF7C7C21393A2A9006AAEF5 /* screenShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF7C7C11393A2A9006AAEF5 /* screenShot.m */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
@@ -59,7 +61,6 @@
 		BEAC17B40F98BE5300A76568 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAC17B30F98BE5300A76568 /* AddressBook.framework */; };
 		BEAC17CA0F98BE7700A76568 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAC17C90F98BE7700A76568 /* CFNetwork.framework */; };
 		BEAC17CF0F98BE8D00A76568 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAC17CE0F98BE8D00A76568 /* AudioToolbox.framework */; };
-		BEAD72DC0FF0355D00C589B0 /* NKit.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BEAD72DB0FF0355D00C589B0 /* NKit.xcconfig */; };
 		BEAD72F20FF0358D00C589B0 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAD72F10FF0358D00C589B0 /* MediaPlayer.framework */; };
 		BEE41E390FD98DBE00BFDBEF /* NKit.js in Resources */ = {isa = PBXBuildFile; fileRef = BEE41E380FD98DBE00BFDBEF /* NKit.js */; };
 		BEE41E530FD98DF500BFDBEF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE41E520FD98DF500BFDBEF /* CoreLocation.framework */; };
@@ -125,6 +126,9 @@
 		1ECBCC3D138FB1CF0062D8F4 /* segmentedcontrol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = segmentedcontrol.html; sourceTree = "<group>"; };
 		1ECF7CAA13CC867800EB08E9 /* getFreeSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getFreeSpace.h; sourceTree = "<group>"; };
 		1ECF7CAB13CC867800EB08E9 /* getFreeSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = getFreeSpace.m; sourceTree = "<group>"; };
+		1ED63A8014658E350035B7F3 /* myscheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myscheme.h; sourceTree = "<group>"; };
+		1ED63A8114658E350035B7F3 /* myscheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myscheme.m; sourceTree = "<group>"; };
+		1ED63A8314658E820035B7F3 /* urlschemas.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = urlschemas.html; sourceTree = "<group>"; };
 		1EDFAE9B1377E1640094CCC8 /* table.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = table.html; sourceTree = "<group>"; };
 		1EF7C7C01393A2A9006AAEF5 /* screenShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = screenShot.h; sourceTree = "<group>"; };
 		1EF7C7C11393A2A9006AAEF5 /* screenShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = screenShot.m; sourceTree = "<group>"; };
@@ -197,6 +201,8 @@
 				1E2724E81330C6E100839B08 /* leftButton.m */,
 				1EA7229813360EDF00CDC608 /* MyPickerController.h */,
 				1EA7229913360EDF00CDC608 /* MyPickerController.m */,
+				1ED63A8014658E350035B7F3 /* myscheme.h */,
+				1ED63A8114658E350035B7F3 /* myscheme.m */,
 				1E47B818133E651D005EF497 /* locale.h */,
 				1E47B819133E651D005EF497 /* locale.m */,
 				1E10AD9F13ABAE4800909A64 /* listFilesInDocumentsFolder.h */,
@@ -312,6 +318,7 @@
 				1E9F26B9138ACDD400087125 /* search.html */,
 				1ECBCC3D138FB1CF0062D8F4 /* segmentedcontrol.html */,
 				1E6490B3140FBDD30097C5F6 /* undetecttel.html */,
+				1ED63A8314658E820035B7F3 /* urlschemas.html */,
 				1E2633FA1342483200C22494 /* style.css */,
 				1E312979135A049B00C4D881 /* wbg.png */,
 				1E9F26C1138BB47300087125 /* bug24.png */,
@@ -347,7 +354,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0420;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ObjC-Mix" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -376,7 +383,6 @@
 				BEE41E390FD98DBE00BFDBEF /* NKit.js in Resources */,
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				BEAC17B00F98BE3600A76568 /* main.html in Resources */,
-				BEAD72DC0FF0355D00C589B0 /* NKit.xcconfig in Resources */,
 				1EA722A413360F3900CDC608 /* pickerview.html in Resources */,
 				1E2633FB1342483200C22494 /* style.css in Resources */,
 				1E919A221347263400820EFF /* prompt.html in Resources */,
@@ -395,6 +401,7 @@
 				1ECBCC3E138FB1CF0062D8F4 /* segmentedcontrol.html in Resources */,
 				1E10ADA313ABAEC800909A64 /* listfiles.html in Resources */,
 				1E6490B4140FBDD30097C5F6 /* undetecttel.html in Resources */,
+				1ED63A8414658E820035B7F3 /* urlschemas.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +433,7 @@
 				1ECF7CAC13CC867800EB08E9 /* getFreeSpace.m in Sources */,
 				1E0A643D13D42F1500E117D8 /* checkJailbreak.m in Sources */,
 				1E6490AE140FBC0C0097C5F6 /* undetectTel.m in Sources */,
+				1ED63A8214658E350035B7F3 /* myscheme.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,7 +450,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ObjC_Mix_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "ObjC_Mix-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -461,7 +469,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ObjC_Mix_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "ObjC_Mix-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

@@ -1,0 +1,56 @@
+<html>
+<head>
+<meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" href="style.css" type="text/css">
+<script type="text/javascript" src="NKit.js"></script>
+</head>
+	
+	
+<body>
+
+<script>
+	NKSetPageOpaque('urlschemas.html', 'NO');
+
+	var navController = new NKNavigationController();
+	navController.setTitle("URL Schemas");
+	
+	var textField = new NKTextField();
+	textField.init(20, 220, 280, 30);
+	textField.show();
+	
+	var nkb = new NKButton();
+	nkb.init(20,260,280,30,"isInstalled()");
+	nkb.setTitle("Is it installed?");
+	nkb.show();
+	
+	
+	// Register Class
+	NKRegisterClass("myscheme");
+	
+	// Check for scheme
+	function isInstalled()
+	{
+		myScheme = textField.getString() + ":";
+		var canWeOpenScheme = CallNKitAction('canOpenScheme?className=myscheme&sync=yes&scheme=' + myScheme);
+		NKLog (canWeOpenScheme);
+		NKAlert ("Can we open " + myScheme + "?",canWeOpenScheme);
+		
+	}
+	
+	// Now that you have the answer, either open the Program via the Scheme or the WWW in Safari Mobile/WebView.
+	// Some schemes to try
+	// http, sms, tel, opentable, maps, youtube, fb, 
+	// most of these will not work in Simulator.
+	// see http://wiki.akosama.com/IPhone_URL_Schemes
+			
+	</script>
+	
+	<div class="infobox">
+	<p>Enter a scheme in the text field.Some schemes to try are:</p>
+	<p><i>http, sms, tel, opentable, maps, youtube, fb</i></p> 
+	<p>Most of these will not work in Simulator. See http://wiki.akosama.com/IPhone_URL_Schemes for a list of schemes to try</p>
+	</div>
+
+</body>
+</html>
