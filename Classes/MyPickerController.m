@@ -30,20 +30,25 @@
 	_picker.dataSource = self;
 	_picker.delegate = self;
 	_picker.showsSelectionIndicator = YES;
-	[_picker selectRow:1 inComponent:1 animated:YES];
-	[_picker selectRow:1 inComponent:0 animated:YES];
+	[_picker selectRow:1 inComponent:1 animated:YES]; // Set Selected Row
+	[_picker selectRow:1 inComponent:0 animated:YES]; // Set Selected Row
     [_webView addSubview:_picker ];
 	
 	//[(UIView*)[[_picker subviews] objectAtIndex:2] setAlpha:0.1f];
 	
 	
+	// ==================================================================================
+	// Use this to place an image over the picker to give impression of a custom skin
+	// ==================================================================================
+	/*
 	CGRect myImageRect = CGRectMake(0.0f, 210.0f, 320.0f, 162.0f);
 	UIImageView *myImage = [[UIImageView alloc] initWithFrame:myImageRect];
 	[myImage setImage:[UIImage imageNamed:@"pickover.png"]];
 	myImage.opaque = YES; // explicitly opaque for performance
 	[_webView addSubview:myImage];
 	[myImage release];
-	
+	*/
+	// ==================================================================================
 	
 	[_picker release];
 }

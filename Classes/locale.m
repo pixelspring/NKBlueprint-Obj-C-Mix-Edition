@@ -37,7 +37,12 @@
 }
 
 
-
+#pragma mark getLang
+- (void)getLang {
+    self.result = [[NSLocale preferredLanguages] objectAtIndex:0]; 
+	
+    
+}
 
 
 #pragma mark methodResult

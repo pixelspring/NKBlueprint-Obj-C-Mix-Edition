@@ -41,6 +41,7 @@ NKRegisterClass("screenShot");
 
 NKRegisterClass("getFreeSpace");
 NKRegisterClass("checkJailbreak");
+NKRegisterClass("TObject");
 
 
 // Battery Status
@@ -63,6 +64,13 @@ function getLocation()
 {
     var locale = CallNKitAction('getLocation?className=locale&sync=yes');
     NKAlert("Your Device Country Code Is:", locale);
+}
+
+// Get Device Country Code
+function getLang()
+{
+	var locale = CallNKitAction('getLang?className=locale&sync=yes');
+	NKAlert("Your ISO 639-1 Language Code Is:", locale);
 }
 
 
@@ -120,6 +128,30 @@ function notJailbroken()
 }
 // ************************************************************************
 
+
+
+
+
+// ************************************************************************
+// Send a tweet in iOS 5
+//
+// Remember to add the Twitter & UIKit frameworks to your project and to
+// add a device version check (ie, only for iOS 5+)
+//
+// Also recommended, "weak link" the Twitter framework: select your target, 
+// select the "Summary" tab, select the framework in "Linked Frameworks and
+// Libraries" and change from "Required" to "Optional"
+// ************************************************************************
+
+var tweetMessage = "This is a tweetage sent via a NimbleKit app with Obj-C/js mix";
+
+function sendTweet()
+{
+	CallNKitAction("tweetIt?className=TObject&message="+tweetMessage);  
+}
+
+// ************************************************************************
+
 </script>
 
 
@@ -134,6 +166,7 @@ function notJailbroken()
 <li><a onClick="CallNKitAction('removeLeftButton?className=leftButton')">Hide Left Button</a></li>
 <li><a onClick="getLocale()">Get Locale</a></li>
 <li><a onClick="getLocation()">Get Location</a></li>
+<li><a onClick="getLang()">Get Language Code</a></li>
 <li><a onClick="CallNKitAction('dummy?className=deShadow')">Remove UIWebView Shadow</a></li>
 
 <!-- ********************************************************
@@ -150,6 +183,7 @@ function notJailbroken()
 <li><a onClick="CallNKitAction('checkForJailbreak?className=checkJailbreak')">Check For Jailbreak</a></li>
 <li><a onClick="navController.gotoPage('undetecttel.html')">Tel. No. Detection</a></li>
 <li><a onClick="navController.gotoPage('urlschemas.html')">URL Schemas</a></li>
+<li><a onClick="sendTweet()">Send a Tweet</a></li>
 
 <!-- ********************************************************
 <--- NOT YET WORKING and/or CRASHY
