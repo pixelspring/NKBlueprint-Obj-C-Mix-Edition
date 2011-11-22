@@ -1,0 +1,58 @@
+<html>
+	<head>
+	<meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<script type="text/javascript" src="NKit.js"></script>
+	<link rel="stylesheet" href="style.css" type="text/css">
+	</head>
+	
+	
+<body>
+
+<script>
+NKSetPageOpaque('compass.html', 'NO');
+
+var navController = new NKNavigationController();
+navController.setTitle("Compass");
+navController.setTintColor(0, 0, 0);
+
+NKRegisterClass("CompassObject");
+
+function start() //Starts Listening Heading Update
+	{
+		CallNKitAction('startlistening?className=CompassObject');
+		get(); //triggers for the first time
+	}
+
+function stop() //Stops Listening to Heading. When changing page stop listening.
+	{ 
+		CallNKitAction('stoplistening?className=CompassObject');
+		clearTimeout(a);
+		NKLog("Stop");
+	}
+
+function get() //This requests heading every 100ms
+	{
+		CallNKitAction('sendback?className=CompassObject');
+		var a = window.setTimeout('get()', 100); //loop
+	}
+
+function compasstext(heading) //Receives heading data from Objective C
+	{
+		document.getElementById('compass').innerHTML = "Heading: " + heading;
+	}
+
+function onPageHidden()
+	{
+		// Add code to stop listening if running
+	}
+</script>
+
+
+<div class="greybutton" onClick="start()">Start</div>
+<div class="greybutton" onClick="stop()">Stop</div>
+
+<div id="compass" class="infobox"></div>
+
+</body>
+</html>
