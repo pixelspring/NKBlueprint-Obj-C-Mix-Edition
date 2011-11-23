@@ -10,7 +10,17 @@
 <script>
 
 NKSetPageOpaque('main.html', 'NO');
+
+// ************************************************************************
+// Customise elements in iOS 5
+// This needs to go before the element creation js call
+
+NKRegisterClass("wood");
+CallNKitAction('navBar?className=wood'); // Customise navBar
+CallNKitAction('tabBar?className=wood'); // Customise tabBar
 	
+// ************************************************************************
+
 	
 var tabController = new NKTabBarController();
 tabController.setTabBarForPage("main.html", "Main", "book32.png");
@@ -42,6 +52,7 @@ NKRegisterClass("screenShot");
 NKRegisterClass("getFreeSpace");
 NKRegisterClass("checkJailbreak");
 NKRegisterClass("TObject");
+
 
 
 // Battery Status
@@ -151,6 +162,7 @@ function sendTweet()
 }
 
 // ************************************************************************
+
 
 </script>
 

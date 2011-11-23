@@ -10,7 +10,19 @@
 
 
 @interface wood : NSObject {
-
+	NSDictionary* _parameters;
+	UIWebView* _webView;
+	NSString* _pageTitle;
+	NSString* _lastReturnResult;
+	NSMutableArray* _components;
+	UIView *overlay;
+	UIViewController* _nimbleViewController;
 }
+
+	@property (retain) NSDictionary* _parameters;
+	@property (retain) UIWebView* _webView;
+	@property (retain) NSString* _pageTitle;
+	@property (retain) NSString* _lastReturnResult;
+	@property (retain) UIViewController* _nimbleViewController;
 
 @end

@@ -59,33 +59,74 @@
 // New iOS 5 custom background methods 
 //****************************************************************
 
-/*
-@interface myNavigationBar : UINavigationBar <UINavigationBarDelegate> {
-}
-@end
+@implementation wood
 
-@implementation myNavigationBar
+@synthesize _nimbleViewController, _parameters, _webView, _pageTitle, _lastReturnResult;
 
-- (id)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
-        // Initialization code
-    }
-    return self;
-}
-
-- (void)drawRect:(CGRect)rect 
+-(void)navBar 
 {
-    // ColorSync manipulated image
-    UIImage *imageBackground = [UIImage imageNamed: @"wbg.png"];
-    [imageBackground drawInRect: CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) ];
+	if ([[UINavigationBar class]respondsToSelector:@selector(appearance)]) {
+	
+	NSLog(@"background Called");
+	// Set a Custom Background Image
+	[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"wbg.png"] forBarMetrics:UIBarMetricsDefault];
+	
+	// Set some custom text attributes on the navBar
+	[[UINavigationBar appearance] setTitleTextAttributes:
+	 [NSDictionary dictionaryWithObjectsAndKeys:
+			
+			// Text Colour - or "color" for those in the US ;)
+			[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0], 
+			UITextAttributeTextColor,
+		    // Text Shadow Colour
+			[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8], 
+			UITextAttributeTextShadowColor, 
+		    // Set the text shadow offset
+			[NSValue valueWithUIOffset:UIOffsetMake(0, -1)], 
+			UITextAttributeTextShadowOffset, 
+		    // Set the font & font size
+			[UIFont fontWithName:@"SnellRoundhand-Black" size:22], 
+			UITextAttributeFont, 
+			nil]];
+	}
 }
 
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
-    
+-(void)tabBar 
+{
+	if ([[UITabBar class]respondsToSelector:@selector(appearance)]) {
+	NSLog(@"tabBar Called");
+	// Set a custom background image
+	UIImage *tabBackground = [[UIImage imageNamed:@"wbg.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+	[[UITabBar appearance] setBackgroundImage:tabBackground];
+	
+	// Set tabBar tint if not using an image 
+	// [[UITabBar appearance] setTintColor:
+	// [UIColor colorWithRed:255.0 green:0.0 blue:0.0 alpha:0.2]];
+	
+	// Set a background image for the selected tab
+	[[UITabBar appearance] setSelectionIndicatorImage:
+	[UIImage imageNamed:@"tabselect.png"]];
+	}
 }
 
-- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+#pragma mark -
+#pragma mark automatic setter methods
+
+- (void)setNKParameters:(NSDictionary*)parameters
+{
+	self._lastReturnResult = nil;
+	self._parameters = parameters;
 }
+
+- (void)setNKCurrentPage:(NSString*)pageTitle
+{
+	self._pageTitle = pageTitle;
+}
+
+- (void)setNKWebView:(UIWebView*)webView
+{
+	self._webView = webView;
+}
+
 
 @end
-*/
