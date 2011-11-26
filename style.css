@@ -35,7 +35,7 @@ p	{
 
 /* Quick 'n Dirty Tableview - remove when native Tableviews introduced
 -------------------------------------------------------------- */
-		
+
 ul {
 	color: black;
 	background: #fff;
@@ -46,7 +46,7 @@ ul {
 	margin: 15px 0px 17px 0;
 	-webkit-border-radius: 8px;
 	}
-		
+
 ul li {
 	color: #666;
 	border-top: 1px solid #B4B4B4;
@@ -57,19 +57,19 @@ ul li {
 	background-position: right center;
 	background-repeat: no-repeat;
 	}
-				
-	li:first-child {	
+
+li:first-child {	
 	border-top: 0;
 	-webkit-border-top-left-radius: 8px;
 	-webkit-border-top-right-radius: 8px;
 	}
 
-	li:last-child {	
+li:last-child {	
 	-webkit-border-bottom-left-radius: 8px;
 	-webkit-border-bottom-right-radius: 8px;
 	}
-				
-	ul li a {
+
+ul li a {
 	color: #000;
 	text-decoration: none;
 	text-overflow: ellipsis;
@@ -80,10 +80,10 @@ ul li {
 	margin: -10px;
 	-webkit-tap-highlight-color:rgba(30,144,255,0.5);
 	}
-				
 
-							
-							
+
+
+
 /* DIV's & CONTAINERS
 -------------------------------------------------------------- */
 

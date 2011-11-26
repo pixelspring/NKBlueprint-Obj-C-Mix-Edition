@@ -22,7 +22,7 @@
 //@property(retain,nonatomic)  UINavigationController *_navigationController;
 @property (retain) UINavigationController* _navigationController;
 @property (nonatomic, assign) UIWebView *webView;
-@property (retain) NSString *currentPage;
+@property (retain) NSString *_currentPage;
 
 
 @end

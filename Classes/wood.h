@@ -15,7 +15,6 @@
 	NSString* _pageTitle;
 	NSString* _lastReturnResult;
 	NSMutableArray* _components;
-	UIView *overlay;
 	UIViewController* _nimbleViewController;
 }
 

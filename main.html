@@ -6,7 +6,7 @@
 
 <body>
 <script type="text/javascript" src="NKit.js"></script>
-
+	
 <script>
 
 NKSetPageOpaque('main.html', 'NO');
@@ -166,7 +166,7 @@ function sendTweet()
 
 </script>
 
-
+<div class="panel">
 <ul>
 
 <!--<li><a onClick="CallNKitAction('showAlert?className=MyObjective')">Show Alert</a></li>-->
@@ -197,17 +197,20 @@ function sendTweet()
 <li><a onClick="navController.gotoPage('urlschemas.html')">URL Schemas</a></li>
 <li><a onClick="sendTweet()">Send a Tweet</a></li>
 <li><a onClick="navController.gotoPage('compass.html')">Compass</a></li>
+<li><a onClick="CallNKitAction('showNavSpinner?className=navSpinner')">Show NavBar Spinner</a></li>
+<li><a onClick="navController.removeNavigationItem()">Remove NavBar Spinner</a></li>
 
 <!-- ********************************************************
 <--- NOT YET WORKING and/or CRASHY
 <--- Please feel free to fix ;)
 <--- ********************************************************
 <li><a onClick="showButtonlessAlert()">Show Buttonless Alert</a></li>
-<li><a onClick="CallNKitAction('showSpinner?className=navSpinner')">Show NavBar Spinner</a></li>
-<li><a onClick="CallNKitAction('stopSpinner?className=navSpinner')">Remove NavBar Spinner</a></li>
 <li><a onClick="CallNKitAction('saveScreenshot?className=screenShot')">Take ScreenShot</a></li>
 -->
 
+	
+
 </ul>
+</div>
 </body>
 </html>
