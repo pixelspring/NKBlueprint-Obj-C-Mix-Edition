@@ -27,7 +27,6 @@
 		1E312998135B47E200C4D881 /* deShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E312997135B47E200C4D881 /* deShadow.m */; };
 		1E3A94B91385324B003A53AB /* flashLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E3A94B81385324B003A53AB /* flashLight.m */; };
 		1E47B81A133E651D005EF497 /* locale.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E47B819133E651D005EF497 /* locale.m */; };
-		1E6490AE140FBC0C0097C5F6 /* undetectTel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6490AD140FBC0C0097C5F6 /* undetectTel.m */; };
 		1E6490B4140FBDD30097C5F6 /* undetecttel.html in Resources */ = {isa = PBXBuildFile; fileRef = 1E6490B3140FBDD30097C5F6 /* undetecttel.html */; };
 		1E733F4A1382EA4700292604 /* buttonlessAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E733F491382EA4600292604 /* buttonlessAlert.m */; };
 		1E733F4D1382EC3F00292604 /* navSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E733F4C1382EC3F00292604 /* navSpinner.m */; };
@@ -107,8 +106,6 @@
 		1E3A94B81385324B003A53AB /* flashLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = flashLight.m; sourceTree = "<group>"; };
 		1E47B818133E651D005EF497 /* locale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = locale.h; sourceTree = "<group>"; };
 		1E47B819133E651D005EF497 /* locale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = locale.m; sourceTree = "<group>"; };
-		1E6490AC140FBC0C0097C5F6 /* undetectTel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = undetectTel.h; sourceTree = "<group>"; };
-		1E6490AD140FBC0C0097C5F6 /* undetectTel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = undetectTel.m; sourceTree = "<group>"; };
 		1E6490B3140FBDD30097C5F6 /* undetecttel.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = undetecttel.html; sourceTree = "<group>"; };
 		1E733F481382EA4600292604 /* buttonlessAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buttonlessAlert.h; sourceTree = "<group>"; };
 		1E733F491382EA4600292604 /* buttonlessAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = buttonlessAlert.m; sourceTree = "<group>"; };
@@ -245,8 +242,6 @@
 				1E9F26BF138BA9F100087125 /* segment.m */,
 				1ECD294B147C0BDF00FABDB0 /* TObject.h */,
 				1ECD2941147BF69200FABDB0 /* TObject.m */,
-				1E6490AC140FBC0C0097C5F6 /* undetectTel.h */,
-				1E6490AD140FBC0C0097C5F6 /* undetectTel.m */,
 				1E312976135A048F00C4D881 /* wood.h */,
 				1E312977135A048F00C4D881 /* wood.m */,
 				1EC715AB13925CF00009F1E9 /* Experimental / WIP */,
@@ -467,7 +462,6 @@
 				1E10ADA113ABAE4800909A64 /* listFilesInDocumentsFolder.m in Sources */,
 				1ECF7CAC13CC867800EB08E9 /* getFreeSpace.m in Sources */,
 				1E0A643D13D42F1500E117D8 /* checkJailbreak.m in Sources */,
-				1E6490AE140FBC0C0097C5F6 /* undetectTel.m in Sources */,
 				1ED63A8214658E350035B7F3 /* myscheme.m in Sources */,
 				1ECD2942147BF69200FABDB0 /* TObject.m in Sources */,
 				1ECD2968147C1DDE00FABDB0 /* CompassClass.m in Sources */,

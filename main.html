@@ -13,7 +13,9 @@ NKSetPageOpaque('main.html', 'NO');
 
 // ************************************************************************
 // Customise elements in iOS 5
-// This needs to go before the element creation js call
+// This needs to go before the element creation js call.
+// Only needs called once on first page to load with custom element
+// creation, then will apply globally.
 
 NKRegisterClass("wood");
 CallNKitAction('navBar?className=wood'); // Customise navBar
@@ -171,23 +173,23 @@ function sendTweet()
 
 <!--<li><a onClick="CallNKitAction('showAlert?className=MyObjective')">Show Alert</a></li>-->
 <!--<li><a onClick="CallNKitAction('CustomAlert?className=CustomAlert')">Show Custom</a></li>-->
+
+<li><a onClick="CallNKitAction('dummy?className=deShadow')">Remove UIWebView Shadow</a></li>
+
 <li><a onClick="CallNKitAction('showActivityIndicator?className=ActivityIndicator')">Show Status Bar Activity Indicator</a></li>
 <li><a onClick="CallNKitAction('hideActivityIndicator?className=ActivityIndicator')">Hide Status Bar Activity Indicator</a></li>
-<li><a onClick="alertPower()">Get Battery Level</a></li>
+
 <li><a onClick="CallNKitAction('addLeftButton?className=leftButton')">Show Left Button</a></li>
 <li><a onClick="CallNKitAction('removeLeftButton?className=leftButton')">Hide Left Button</a></li>
+
+<li><a onClick="CallNKitAction('showNavSpinner?className=navSpinner')">Show NavBar Spinner</a></li>
+<li><a onClick="navController.removeNavigationItem()">Remove NavBar Spinner</a></li>
+
+<li><a onClick="alertPower()">Get Battery Level</a></li>
+
 <li><a onClick="getLocale()">Get Locale</a></li>
 <li><a onClick="getLocation()">Get Location</a></li>
 <li><a onClick="getLang()">Get Language Code</a></li>
-<li><a onClick="CallNKitAction('dummy?className=deShadow')">Remove UIWebView Shadow</a></li>
-
-<!-- ********************************************************
-<--- NEED TO ADD CHECK FOR OS VERSION & DEVICE CAPABILITY
-<--- This will ONLY run on device and will crash simulator!
-<--- ******************************************************** -->
-<li><a onClick="CallNKitAction('flashOn?className=flashLight')">Flashlight On <i>(Device Only)</i></a></li>
-<li><a onClick="CallNKitAction('flashOff?className=flashLight')">Flashlight Off <i>(Device Only)</i></a></li>
-<!--- ******************************************************* -->
 
 <li><a onClick="navController.gotoPage('segmentedcontrol.html')">Segmented Control</a></li>
 <li><a onClick="navController.gotoPage('listfiles.html')">Get Files In Documents Folder</a></li>
@@ -197,8 +199,15 @@ function sendTweet()
 <li><a onClick="navController.gotoPage('urlschemas.html')">URL Schemas</a></li>
 <li><a onClick="sendTweet()">Send a Tweet</a></li>
 <li><a onClick="navController.gotoPage('compass.html')">Compass</a></li>
-<li><a onClick="CallNKitAction('showNavSpinner?className=navSpinner')">Show NavBar Spinner</a></li>
-<li><a onClick="navController.removeNavigationItem()">Remove NavBar Spinner</a></li>
+
+<!-- ********************************************************
+<--- NEED TO ADD CHECK FOR OS VERSION & DEVICE CAPABILITY
+<--- This will ONLY run on device and will crash simulator!
+<--- ******************************************************** -->
+<li><a onClick="CallNKitAction('flashOn?className=flashLight')">Flashlight On <i>(Device Only)</i></a></li>
+<li><a onClick="CallNKitAction('flashOff?className=flashLight')">Flashlight Off <i>(Device Only)</i></a></li>
+<!--- ******************************************************* -->
+
 
 <!-- ********************************************************
 <--- NOT YET WORKING and/or CRASHY

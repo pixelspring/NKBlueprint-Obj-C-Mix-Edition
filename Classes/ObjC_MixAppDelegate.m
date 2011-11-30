@@ -15,7 +15,9 @@ extern BOOL _mainWebViewLoaded;
 
 @implementation ObjC_MixAppDelegate
 
-@synthesize window = _window;
+//@synthesize window = _window;
+
+@synthesize _parameters, window = _window, _lastReturnResult;
 
 // Fancy Fade/Zoom After Load 
 //*********************************
@@ -50,6 +52,34 @@ extern BOOL _mainWebViewLoaded;
     //splashView.frame = CGRectMake(-60, -85, 440, 635);  // Comment this out (or change dimension to match initWithFrame) for fade without zoom.
     [UIView commitAnimations]; 
 }
+
+
+
+
+/*
+ this is the method in charge to remove the detectos
+ it receives a string (the name of the page) you want to remove the detectors
+ */
+- (void)removeDetector 
+{
+	NSString *page = [self._parameters objectForKey:@"page"];
+	UIWebView* view = [[NKBridge sharedInstance] webViewForPage:page];
+	view.dataDetectorTypes = UIDataDetectorTypeNone;
+}
+
+//Used by NK to receive parameters from JS to a method
+- (void)setNKParameters:(NSDictionary *)parameters
+{
+	self._parameters = parameters;
+}
+
+//Used by NK
+- (NSString*)methodResult
+{
+	return self._lastReturnResult;
+}
+
+
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {

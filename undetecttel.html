@@ -8,19 +8,18 @@
 	
 	
 <body>
-
 <script>
 
 var navController = new NKNavigationController();
 navController.setTitle("Tel. No");
-	
 
+// **********************************************************	
+// Class now moved to appDelegate
 
-function onPageShown(caller) {
-	NKRegisterClass("undetectTel");
-	CallNKitAction("nada?className=undetectTel");
-	NKAlert("Blah", "Blah blah");
-}
+NKRegisterClass("ObjC_MixAppDelegate");
+CallNKitAction("removeDetector?className=ObjC_MixAppDelegate&page=undetecttel.html");
+
+// **********************************************************
 	 
 </script>    
 
