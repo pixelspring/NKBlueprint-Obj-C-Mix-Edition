@@ -54,6 +54,22 @@
 @end
 
 
+//****************************************************************
+// Background for UITableView Rows:
+// Currently very limited as it just draws an image as background
+// to the tableview cell - no options yet to customise font etc
+//****************************************************************
+
+@implementation UITableViewCell (CustomBg)
+
+- (void)drawRect:(CGRect)rect {
+	UIImage *image = [UIImage imageNamed:@"tablerowbg.png"];
+	[image drawInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+}
+
+
+
+@end
 
 //****************************************************************
 // New iOS 5 custom background methods 

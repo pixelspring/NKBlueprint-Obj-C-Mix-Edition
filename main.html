@@ -25,11 +25,11 @@ CallNKitAction('tabBar?className=wood'); // Customise tabBar
 
 	
 var tabController = new NKTabBarController();
-tabController.setTabBarForPage("main.html", "Main", "book32.png");
-tabController.setTabBarForPage("pickerview.html", "Picker", "book32.png");
-tabController.setTabBarForPage("prompt.html", "Prompt", "book32.png");
-tabController.setTabBarForPage("table.html", "Table", "book32.png");
-tabController.setTabBarForPage("search.html", "Search", "book32.png");
+tabController.setTabBarForPage("main.html", "Main", "home.png");
+tabController.setTabBarForPage("pickerview.html", "Picker", "picker.png");
+tabController.setTabBarForPage("prompt.html", "Prompt", "prompt.png");
+tabController.setTabBarForPage("table.html", "Table", "tblvw.png");
+tabController.setTabBarForPage("search.html", "Search", "search.png");
 
 var navController = new NKNavigationController();
 navController.setTitle("Obj-C Tests");
@@ -165,6 +165,14 @@ function sendTweet()
 
 // ************************************************************************
 
+function showComposer()
+{
+	var composer = new NKMailComposer();
+	composer.setRecipient("a.voloshyn@gmail.com, voloshyn@me.com");
+	composer.setSubject("Email Composer");!
+	composer.setBody("Message Body!");
+	composer.show(); 
+}
 
 </script>
 
@@ -173,6 +181,8 @@ function sendTweet()
 
 <!--<li><a onClick="CallNKitAction('showAlert?className=MyObjective')">Show Alert</a></li>-->
 <!--<li><a onClick="CallNKitAction('CustomAlert?className=CustomAlert')">Show Custom</a></li>-->
+
+<li><a onClick="showComposer()">Mail Composer</a></li>
 
 <li><a onClick="CallNKitAction('dummy?className=deShadow')">Remove UIWebView Shadow</a></li>
 
