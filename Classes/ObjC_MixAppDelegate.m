@@ -35,7 +35,12 @@ extern BOOL _mainWebViewLoaded;
 		[[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1]];
 	}
     
-    //sleep(10); // Delay App start by holding the Default.png for 10 seconds
+	// Enable Safari's Web Inspector for iOS 5 using a conditional, as app will throw a hissy fit & crash if lower than iOS 5 :)
+	if ([[[UIDevice currentDevice] systemVersion] floatValue] > 5) {
+    [NSClassFromString(@"WebView") _enableRemoteInspector];
+	}
+	
+	//sleep(10); // Delay App start by holding the Default.png for 10 seconds
     
     // Fancy Fade/Zoom After Load 
     //*********************************
@@ -51,9 +56,8 @@ extern BOOL _mainWebViewLoaded;
     splashView.alpha = 0.0;  
     //splashView.frame = CGRectMake(-60, -85, 440, 635);  // Comment this out (or change dimension to match initWithFrame) for fade without zoom.
     [UIView commitAnimations]; 
+	
 }
-
-
 
 
 /*

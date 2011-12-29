@@ -37,8 +37,8 @@ navController.setTintColor(0, 0, 0);
 
 
 
-// NKRegisterClass's
-NKRegisterClass("CustomAlert");
+// NKRegisterClasses
+NKRegisterClass("customUIAlert");
 NKRegisterClass("ActivityIndicator");
 NKRegisterClass("webViewController");
 NKRegisterClass("battery");
@@ -165,13 +165,12 @@ function sendTweet()
 
 // ************************************************************************
 
-function showComposer()
+
+function showCustomAlert()
 {
-	var composer = new NKMailComposer();
-	composer.setRecipient("a.voloshyn@gmail.com, voloshyn@me.com");
-	composer.setSubject("Email Composer");!
-	composer.setBody("Message Body!");
-	composer.show(); 
+	var customAlert="customAlert?className=customUIAlert&title=Custom Alert&message=This is a customised UIAlertView\n\nWoohoo!&cancel=Lovely!&ok=Nice!"
+	
+	CallNKitAction(customAlert); 
 }
 
 </script>
@@ -179,10 +178,7 @@ function showComposer()
 <div class="panel">
 <ul>
 
-<!--<li><a onClick="CallNKitAction('showAlert?className=MyObjective')">Show Alert</a></li>-->
-<!--<li><a onClick="CallNKitAction('CustomAlert?className=CustomAlert')">Show Custom</a></li>-->
-
-<li><a onClick="showComposer()">Mail Composer</a></li>
+<li><a onClick="showCustomAlert()">Show Custom Alert</a></li>
 
 <li><a onClick="CallNKitAction('dummy?className=deShadow')">Remove UIWebView Shadow</a></li>
 

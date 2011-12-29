@@ -19,7 +19,45 @@
 }
 
 
+
+#if TARGET_IPHONE_SIMULATOR
+#warning *** Simulator: Flashlight only works on device & will crash simulator if called.
+#endif
+
 - (id) init {
+
+
+	{               
+#if TARGET_IPHONE_SIMULATOR
+		UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"FYI" message:@"Flashlight not available on simulator. If you try, it WILL crash this app\n\n ;)" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		
+		// Add an image to the UIAlertView ---------------------------------------------------------------------
+		UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(220, 10, 32, 32)];
+		
+		// Get the Layer of imageView
+		CALayer * l = [imageView layer];
+		[l setMasksToBounds:YES];
+		[l setCornerRadius:6.0];
+		
+		// Add a border to the image
+		[l setBorderWidth:2.0];
+		[l setBorderColor:[[UIColor whiteColor] CGColor]];
+		
+		NSString *path = [[NSString alloc] initWithString:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"icon.png"]];
+		UIImage *bkgImg = [[UIImage alloc] initWithContentsOfFile:path];
+		[imageView setImage:bkgImg];
+		[bkgImg release];
+		[path release];
+		
+		[alert addSubview:imageView];
+		[imageView release];
+		// Image Code Endeth here ------------------------------------------------------------------------------
+		
+		[alert show];
+		[alert release];
+#endif   
+	}
+
     if ((self = [super init])) {
         
         // initialize flashlight
