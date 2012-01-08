@@ -53,6 +53,26 @@
 	[_picker release];
 }
 
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+	CGRect rect = CGRectMake(0, 0, 120, 80);
+	
+	UILabel *label = [[UILabel alloc]initWithFrame:rect];
+	//CGAffineTransform rotate = CGAffineTransformMakeRotation(-3.14/2);
+	//rotate = CGAffineTransformScale(rotate, 0.25, 2.0);
+	//[label setTransform:rotate];
+	
+	//label.text = [pickerViewArray objectAtIndex:row];
+	label.text = [[_components objectAtIndex:component] objectAtIndex:row];
+	
+	label.font = [UIFont fontWithName:@"Georgia-BoldItalic"  size:10];
+	label.textAlignment = UITextAlignmentCenter;
+	label.numberOfLines = 2;
+	label.lineBreakMode = UILineBreakModeWordWrap;
+	label.backgroundColor = [UIColor clearColor];
+	label.clipsToBounds = YES;
+	return label ;
+}
+
 - (void)clearAllComponents
 {
 	[_components release];

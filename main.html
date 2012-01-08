@@ -166,13 +166,23 @@ function sendTweet()
 // ************************************************************************
 
 
+
+// ************************************************************************
+// Custom Alert
+
 function showCustomAlert()
 {
-	var customAlert="customAlert?className=customUIAlert&title=Custom Alert&message=This is a customised UIAlertView\n\nWoohoo!&cancel=Lovely!&ok=Nice!"
+	var customAlert="customAlert?className=customUIAlert&caPage=main.html&title=Custom Alert&message=This is a customised UIAlertView\n\nWoohoo!&cancel=Lovely!&ok=Nice!&jsCAFunction=caButtonPressed()"
 	
 	CallNKitAction(customAlert); 
 }
 
+	function caButtonPressed() {
+        NKLog("Custom Alert OK Button Pressed");
+		// Do Something instead of a boring NKLog :)
+	}
+
+// ************************************************************************
 </script>
 
 <div class="panel">

@@ -16,8 +16,6 @@
 
 -(void)customAlert
 {
-	NSLog(@"Custom Alert Called");
-	
 	customUIAlert *customAlertView = [[customUIAlert alloc] initWithTitle:[_parameters objectForKey:@"title"]
 															      message:[_parameters objectForKey:@"message"]
 																 delegate:self
@@ -27,6 +25,20 @@
 	[customAlertView show];
 	[customAlertView release];
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex==1) {
+        NSString* jsCode = [NSString stringWithFormat:[_parameters objectForKey:@"jsCAFunction"]];
+		
+		NSString* getWebPage = [self._parameters objectForKey:@"caPage"];
+        UIWebView* view = [[NKBridge sharedInstance] webViewForPage:getWebPage];
+		
+        [view performSelectorOnMainThread:@selector(stringByEvaluatingJavaScriptFromString:) withObject:jsCode waitUntilDone:YES];
+    }
+    
+}
+
 
 - (void)layoutSubviews
 {
