@@ -183,6 +183,11 @@ function showCustomAlert()
 	}
 
 // ************************************************************************
+
+function showScrollView() {
+	NKRegisterClass("scrollView");
+	CallNKitAction('showScrollView?className=scrollView');
+}
 </script>
 
 <div class="panel">
@@ -215,6 +220,7 @@ function showCustomAlert()
 <li><a onClick="navController.gotoPage('urlschemas.html')">URL Schemas</a></li>
 <li><a onClick="sendTweet()">Send a Tweet</a></li>
 <li><a onClick="navController.gotoPage('compass.html')">Compass</a></li>
+<li><a onClick="navController.gotoPage('scrollview.html')">Scroll View</a></li>
 
 <!-- ********************************************************
 <--- NEED TO ADD CHECK FOR OS VERSION & DEVICE CAPABILITY

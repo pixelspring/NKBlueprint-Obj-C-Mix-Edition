@@ -43,6 +43,8 @@
 		1EA7229A13360EDF00CDC608 /* MyPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA7229913360EDF00CDC608 /* MyPickerController.m */; };
 		1EA722A413360F3900CDC608 /* pickerview.html in Resources */ = {isa = PBXBuildFile; fileRef = 1EA722A313360F3900CDC608 /* pickerview.html */; };
 		1EA84A37137E96230033C6EF /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1EA84A36137E96230033C6EF /* README.txt */; };
+		1EA9371514C1E47000A89409 /* scrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9371414C1E47000A89409 /* scrollView.m */; };
+		1EA9374B14C1F0B300A89409 /* scrollview.html in Resources */ = {isa = PBXBuildFile; fileRef = 1EA9374A14C1F0B300A89409 /* scrollview.html */; };
 		1EB61059148A7C0000E8AFA1 /* tablerowbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EB61058148A7C0000E8AFA1 /* tablerowbg.png */; };
 		1EB6105F148A84FB00E8AFA1 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EB6105A148A84FB00E8AFA1 /* home.png */; };
 		1EB61060148A84FB00E8AFA1 /* picker.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EB6105B148A84FB00E8AFA1 /* picker.png */; };
@@ -134,6 +136,9 @@
 		1EA7229913360EDF00CDC608 /* MyPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPickerController.m; sourceTree = "<group>"; };
 		1EA722A313360F3900CDC608 /* pickerview.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = pickerview.html; sourceTree = "<group>"; };
 		1EA84A36137E96230033C6EF /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		1EA9371314C1E47000A89409 /* scrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scrollView.h; sourceTree = "<group>"; };
+		1EA9371414C1E47000A89409 /* scrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = scrollView.m; sourceTree = "<group>"; };
+		1EA9374A14C1F0B300A89409 /* scrollview.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = scrollview.html; sourceTree = "<group>"; };
 		1EB61058148A7C0000E8AFA1 /* tablerowbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tablerowbg.png; sourceTree = "<group>"; };
 		1EB6105A148A84FB00E8AFA1 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		1EB6105B148A84FB00E8AFA1 /* picker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picker.png; sourceTree = "<group>"; };
@@ -252,6 +257,8 @@
 				1E733F4C1382EC3F00292604 /* navSpinner.m */,
 				1E9F26BE138BA9F000087125 /* segment.h */,
 				1E9F26BF138BA9F100087125 /* segment.m */,
+				1EA9371314C1E47000A89409 /* scrollView.h */,
+				1EA9371414C1E47000A89409 /* scrollView.m */,
 				1ECD294B147C0BDF00FABDB0 /* TObject.h */,
 				1ECD2941147BF69200FABDB0 /* TObject.m */,
 				1E312976135A048F00C4D881 /* wood.h */,
@@ -350,6 +357,7 @@
 				1EA722A313360F3900CDC608 /* pickerview.html */,
 				1E919A211347263400820EFF /* prompt.html */,
 				1EDFAE9B1377E1640094CCC8 /* table.html */,
+				1EA9374A14C1F0B300A89409 /* scrollview.html */,
 				1E9F26B9138ACDD400087125 /* search.html */,
 				1ECBCC3D138FB1CF0062D8F4 /* segmentedcontrol.html */,
 				1E6490B3140FBDD30097C5F6 /* undetecttel.html */,
@@ -456,6 +464,7 @@
 				1EB61061148A84FB00E8AFA1 /* prompt.png in Resources */,
 				1EB61062148A84FB00E8AFA1 /* search.png in Resources */,
 				1EB61063148A84FB00E8AFA1 /* tblvw.png in Resources */,
+				1EA9374B14C1F0B300A89409 /* scrollview.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +499,7 @@
 				1ECD2968147C1DDE00FABDB0 /* CompassClass.m in Sources */,
 				1ECD2969147C1DDE00FABDB0 /* CompassObject.m in Sources */,
 				1E4F676314ACA8F300EA3FCB /* customUIAlert.m in Sources */,
+				1EA9371514C1E47000A89409 /* scrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
