@@ -36,9 +36,9 @@ extern BOOL _mainWebViewLoaded;
 	}
     
 	// Enable Safari's Web Inspector for iOS 5 using a conditional, as app will throw a hissy fit & crash if lower than iOS 5 :)
-	//if ([[[UIDevice currentDevice] systemVersion] floatValue] > 5) {
-    //[NSClassFromString(@"WebView") _enableRemoteInspector];
-	//}
+	if ([[[UIDevice currentDevice] systemVersion] floatValue] > 5) {
+        [NSClassFromString(@"WebView") _enableRemoteInspector];
+	}
 	
 	//sleep(10); // Delay App start by holding the Default.png for 10 seconds
     
