@@ -25,6 +25,8 @@
 		1E31298A135A098B00C4D881 /* nk_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E312989135A098B00C4D881 /* nk_background.png */; };
 		1E312998135B47E200C4D881 /* deShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E312997135B47E200C4D881 /* deShadow.m */; };
 		1E3A94B91385324B003A53AB /* flashLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E3A94B81385324B003A53AB /* flashLight.m */; };
+		1E4554B714F11AD9001D071F /* localnotifications.html in Resources */ = {isa = PBXBuildFile; fileRef = 1E4554B614F11AD9001D071F /* localnotifications.html */; };
+		1E4554BB14F11C9B001D071F /* localNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4554BA14F11C9B001D071F /* localNotification.m */; };
 		1E47B81A133E651D005EF497 /* locale.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E47B819133E651D005EF497 /* locale.m */; };
 		1E4F676314ACA8F300EA3FCB /* customUIAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4F676214ACA8F300EA3FCB /* customUIAlert.m */; };
 		1E6490B4140FBDD30097C5F6 /* undetecttel.html in Resources */ = {isa = PBXBuildFile; fileRef = 1E6490B3140FBDD30097C5F6 /* undetecttel.html */; };
@@ -110,6 +112,9 @@
 		1E312997135B47E200C4D881 /* deShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = deShadow.m; sourceTree = "<group>"; };
 		1E3A94B71385324B003A53AB /* flashLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flashLight.h; sourceTree = "<group>"; };
 		1E3A94B81385324B003A53AB /* flashLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = flashLight.m; sourceTree = "<group>"; };
+		1E4554B614F11AD9001D071F /* localnotifications.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = localnotifications.html; sourceTree = "<group>"; };
+		1E4554B914F11C9B001D071F /* localNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = localNotification.h; sourceTree = "<group>"; };
+		1E4554BA14F11C9B001D071F /* localNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = localNotification.m; sourceTree = "<group>"; };
 		1E47B818133E651D005EF497 /* locale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = locale.h; sourceTree = "<group>"; };
 		1E47B819133E651D005EF497 /* locale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = locale.m; sourceTree = "<group>"; };
 		1E4F676114ACA8F300EA3FCB /* customUIAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customUIAlert.h; sourceTree = "<group>"; };
@@ -245,6 +250,8 @@
 				1E2724E81330C6E100839B08 /* leftButton.m */,
 				1E47B818133E651D005EF497 /* locale.h */,
 				1E47B819133E651D005EF497 /* locale.m */,
+				1E4554B914F11C9B001D071F /* localNotification.h */,
+				1E4554BA14F11C9B001D071F /* localNotification.m */,
 				1E10AD9F13ABAE4800909A64 /* listFilesInDocumentsFolder.h */,
 				1E10ADA013ABAE4800909A64 /* listFilesInDocumentsFolder.m */,
 				1EA7229813360EDF00CDC608 /* MyPickerController.h */,
@@ -354,6 +361,7 @@
 				BEAC17AF0F98BE3600A76568 /* main.html */,
 				1ECD296A147C1E8A00FABDB0 /* compass.html */,
 				1E10ADA213ABAEC800909A64 /* listfiles.html */,
+				1E4554B614F11AD9001D071F /* localnotifications.html */,
 				1EA722A313360F3900CDC608 /* pickerview.html */,
 				1E919A211347263400820EFF /* prompt.html */,
 				1EDFAE9B1377E1640094CCC8 /* table.html */,
@@ -465,6 +473,7 @@
 				1EB61062148A84FB00E8AFA1 /* search.png in Resources */,
 				1EB61063148A84FB00E8AFA1 /* tblvw.png in Resources */,
 				1EA9374B14C1F0B300A89409 /* scrollview.html in Resources */,
+				1E4554B714F11AD9001D071F /* localnotifications.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +509,7 @@
 				1ECD2969147C1DDE00FABDB0 /* CompassObject.m in Sources */,
 				1E4F676314ACA8F300EA3FCB /* customUIAlert.m in Sources */,
 				1EA9371514C1E47000A89409 /* scrollView.m in Sources */,
+				1E4554BB14F11C9B001D071F /* localNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
