@@ -28,7 +28,7 @@ extern BOOL _mainWebViewLoaded;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
 
-	Nimble *nimble = [[Nimble alloc] initWithRootPage:@"main.html" window:self.window serial:@"AABA-C0C5-6551-FE48"];
+	Nimble *nimble = [[Nimble alloc] initWithRootPage:@"main.html" window:self.window serial:@"YOUR-SERIAL-HERE"];
 	[nimble release];
 	[self.window makeKeyAndVisible];
 	while (!_mainWebViewLoaded) {
