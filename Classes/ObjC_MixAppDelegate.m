@@ -28,7 +28,7 @@ extern BOOL _mainWebViewLoaded;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
 
-	Nimble *nimble = [[Nimble alloc] initWithRootPage:@"main.html" window:self.window serial:@"YOUR_SERIAL_HERE"];
+	Nimble *nimble = [[Nimble alloc] initWithRootPage:@"main.html" window:self.window serial:@"AABA-C0C5-6551-FE48"];
 	[nimble release];
 	[self.window makeKeyAndVisible];
 	while (!_mainWebViewLoaded) {
@@ -36,9 +36,9 @@ extern BOOL _mainWebViewLoaded;
 	}
     
 	// Enable Safari's Web Inspector for iOS 5 using a conditional, as app will throw a hissy fit & crash if lower than iOS 5 :)
-	if ([[[UIDevice currentDevice] systemVersion] floatValue] > 5) {
-    [NSClassFromString(@"WebView") _enableRemoteInspector];
-	}
+	//if ([[[UIDevice currentDevice] systemVersion] floatValue] > 5) {
+    //[NSClassFromString(@"WebView") _enableRemoteInspector];
+	//}
 	
 	//sleep(10); // Delay App start by holding the Default.png for 10 seconds
     
