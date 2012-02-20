@@ -15,16 +15,15 @@ extern BOOL _mainWebViewLoaded;
 
 @implementation ObjC_MixAppDelegate
 
-//@synthesize window = _window;
-
 @synthesize _parameters, window = _window, _lastReturnResult;
 
-// Fancy Fade/Zoom After Load 
-//*********************************
-- (void)startupAnimationDone:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {  
-    [splashView removeFromSuperview];  
-    [splashView release];  
-} 
+	// -----------------------------------------------------------------------------------------------------
+	// Fancy Fade/Zoom After Load 
+	// -----------------------------------------------------------------------------------------------------
+	- (void)startupAnimationDone:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {  
+		[splashView removeFromSuperview];  
+		[splashView release];  
+	} 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
 
@@ -35,15 +34,33 @@ extern BOOL _mainWebViewLoaded;
 		[[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1]];
 	}
     
+	// -----------------------------------------------------------------------------------------------------
 	// Enable Safari's Web Inspector for iOS 5 using a conditional, as app will throw a hissy fit & crash if lower than iOS 5 :)
-	if ([[[UIDevice currentDevice] systemVersion] floatValue] > 5) {
-        [NSClassFromString(@"WebView") _enableRemoteInspector];
-	}
+	// Uncomment, Fire up Safari and visit http://localhost:9999 for web inspector goodness.
+	// Ignore warning for simulator & delete for release.
+	// -----------------------------------------------------------------------------------------------------
+	//
+	// if ([[[UIDevice currentDevice] systemVersion] floatValue] > 5) {[NSClassFromString(@"WebView") _enableRemoteInspector];}
+	//
+	// -----------------------------------------------------------------------------------------------------
 	
-	//sleep(10); // Delay App start by holding the Default.png for 10 seconds
+	
+	
+	
+	// -----------------------------------------------------------------------------------------------------
+	// If you want to delay app startup you can do it like so:
+	// -----------------------------------------------------------------------------------------------------
+	//
+	// sleep(10); // Delay App start by holding the Default.png for 10 seconds
+	//
+	// -----------------------------------------------------------------------------------------------------
     
-    // Fancy Fade/Zoom After Load 
-    //*********************************
+	
+	
+	
+    // -----------------------------------------------------------------------------------------------------
+	// Fancy Fade/Zoom After Load 
+    /// -----------------------------------------------------------------------------------------------------
     splashView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, 320, 480)];  
     splashView.image = [UIImage imageNamed:@"Default.png"];  
     [self.window addSubview:splashView];  
@@ -60,49 +77,54 @@ extern BOOL _mainWebViewLoaded;
 }
 
 
-/*
- this is the method in charge to remove the detectos
- it receives a string (the name of the page) you want to remove the detectors
- */
-- (void)removeDetector 
-{
-	NSString *page = [self._parameters objectForKey:@"page"];
-	UIWebView* view = [[NKBridge sharedInstance] webViewForPage:page];
-	view.dataDetectorTypes = UIDataDetectorTypeNone;
-}
+	
+- (void)removeDetector
+	// -----------------------------------------------------------------------------------------------------
+	// This is the method in charge to remove the Tel No. detectors
+	// It receives a string (the name of the page) you want to remove the Tel No. detectors
+	// -----------------------------------------------------------------------------------------------------
 
-//Used by NK to receive parameters from JS to a method
-- (void)setNKParameters:(NSDictionary *)parameters
-{
-	self._parameters = parameters;
-}
+	{
+		NSString *page = [self._parameters objectForKey:@"page"];
+		UIWebView* view = [[NKBridge sharedInstance] webViewForPage:page];
+		view.dataDetectorTypes = UIDataDetectorTypeNone;
+	}
 
-//Used by NK
-- (NSString*)methodResult
-{
-	return self._lastReturnResult;
-}
+	
+	- (void)setNKParameters:(NSDictionary *)parameters
+	// -----------------------------------------------------------------------------------------------------
+	// Used by NK to receive parameters from JS to a method
+	// -----------------------------------------------------------------------------------------------------
+	{
+		self._parameters = parameters;
+	}
+
+	// Used by NK
+	- (NSString*)methodResult
+	{
+		return self._lastReturnResult;
+	}
 
 
 
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-	[[NKBridge sharedInstance] performSelector:@selector(onApplicationQuit)];
-}
+	- (void)applicationWillTerminate:(UIApplication *)application
+	{
+		[[NKBridge sharedInstance] performSelector:@selector(onApplicationQuit)];
+	}
 
-- (void)dealloc {
-    [_window release];
-    [super dealloc];
-}
+	- (void)dealloc {
+		[_window release];
+		[super dealloc];
+	}
 
 
 @end
 
 
 
-//****************************************************************
+// -----------------------------------------------------------------------------------------------------
 // Fancy Fade/Zoom After Load for universal app (iPhone / iPad)
-//****************************************************************
+// -----------------------------------------------------------------------------------------------------
 
 /*
  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
