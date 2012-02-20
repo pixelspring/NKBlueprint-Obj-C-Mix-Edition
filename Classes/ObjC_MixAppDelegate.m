@@ -78,7 +78,7 @@ extern BOOL _mainWebViewLoaded;
 
 
 	
-- (void)removeDetector
+	- (void)removeDetector
 	// -----------------------------------------------------------------------------------------------------
 	// This is the method in charge to remove the Tel No. detectors
 	// It receives a string (the name of the page) you want to remove the Tel No. detectors
@@ -104,18 +104,28 @@ extern BOOL _mainWebViewLoaded;
 	{
 		return self._lastReturnResult;
 	}
+	
+	
+	
+	- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+		// -----------------------------------------------------------------------------------------------------
+		// LOCAL NOTIFICATIONS:
+		// If the app is running, the notification won't fire - so for now, we'll log it instead
+		// -----------------------------------------------------------------------------------------------------
+		NSLog(@"Recieved Notification %@",notification);
+		}
 
 
 
 	- (void)applicationWillTerminate:(UIApplication *)application
 	{
 		[[NKBridge sharedInstance] performSelector:@selector(onApplicationQuit)];
-	}
+		}
 
 	- (void)dealloc {
 		[_window release];
 		[super dealloc];
-	}
+		}
 
 
 @end
