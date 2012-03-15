@@ -1,0 +1,29 @@
+<html>
+	<head>
+	<meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<script type="text/javascript" src="NKit.js"></script>
+	<link rel="stylesheet" href="style.css" type="text/css">
+	</head>
+	
+	
+<body>
+
+	<script>
+		var navController = new NKNavigationController();
+		navController.setTitle("Gestures");
+		NKSetPageOpaque('gestures.html', 'NO');
+		
+		document.ontouchmove = function(event){event.preventDefault();}
+		
+		NKRegisterClass("gestures");
+		
+		CallNKitAction('showGestureView?className=gestures');
+		
+		function whatGesture(gesture) {
+			NKAlert("You did a:", gesture);
+		}
+		</script>
+
+</body>
+</html>
