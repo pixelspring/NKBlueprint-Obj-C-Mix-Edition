@@ -26,7 +26,7 @@
 
 
 
-#pragma mark getLocale
+#pragma mark getLocale: returns currency symbol
 - (void)getLocale
 {    
     NSNumberFormatter *fmtr = [[[NSNumberFormatter alloc] init] autorelease];

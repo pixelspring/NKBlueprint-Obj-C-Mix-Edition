@@ -1,0 +1,13 @@
+---------------------------------------------------------
+NK BLUEPRINT - Objective-C Edition Licence
+---------------------------------------------------------
+
+TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+1)	You can use this code in your application, to learn from, and modify it for your own purposes
+
+2)	If you find a way to improve it, contributing your changes back to the project would be great
+
+3)	Please don't take this code and sell it unmodified. If you do use modified code from this project for eg. a plugin or any similar item, it would be nice for the contributors if you give them a licensed copy of the plugin and source.
+
+4)	This code is provided 'as-is', without any express or implied warranty.  In no event will the authors be held liable for any damages arising from the use of this code.

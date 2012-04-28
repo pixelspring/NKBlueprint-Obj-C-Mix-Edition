@@ -45,6 +45,7 @@ NKRegisterClass("battery");
 NKRegisterClass("leftButton");
 NKRegisterClass("locale");
 NKRegisterClass("deShadow");
+NKRegisterClass("deBounce");
 NKRegisterClass("flashLight");
 
 NKRegisterClass("buttonlessAlert");
@@ -191,6 +192,7 @@ function showCustomAlert()
 <li><a onClick="showCustomAlert()">Show Custom Alert</a></li>
 
 <li><a onClick="CallNKitAction('dummy?className=deShadow')">Remove UIWebView Shadow</a></li>
+<li><a onClick="CallNKitAction('noBounce?className=deBounce')">Prevent WebView Bounce (iOS 5+)</a></li>
 
 <li><a onClick="CallNKitAction('showActivityIndicator?className=ActivityIndicator')">Show Status Bar Activity Indicator</a></li>
 <li><a onClick="CallNKitAction('hideActivityIndicator?className=ActivityIndicator')">Hide Status Bar Activity Indicator</a></li>
