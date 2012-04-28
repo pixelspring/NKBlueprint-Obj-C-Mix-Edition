@@ -13,5 +13,5 @@ NK BLUEPRINT - Objective-C Edition
 
 NK Blueprint Objective-C Edition is a demo of various Obj-C / javascript mix examples for the NimbleKit framework. All contributions welcome!
 
-NimbleKit forum thread:
+NimbleKit forum thread for further details:
 http://www.nimblekit.com/forum/viewtopic.php?f=13&t=2773
