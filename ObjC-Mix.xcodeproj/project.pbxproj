@@ -30,6 +30,7 @@
 		1E47B81A133E651D005EF497 /* locale.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E47B819133E651D005EF497 /* locale.m */; };
 		1E4F676314ACA8F300EA3FCB /* customUIAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4F676214ACA8F300EA3FCB /* customUIAlert.m */; };
 		1E6490B4140FBDD30097C5F6 /* undetecttel.html in Resources */ = {isa = PBXBuildFile; fileRef = 1E6490B3140FBDD30097C5F6 /* undetecttel.html */; };
+		1E6967EC15543BDE00748599 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1E6967EB15543BDE00748599 /* README.md */; };
 		1E733F4A1382EA4700292604 /* buttonlessAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E733F491382EA4600292604 /* buttonlessAlert.m */; };
 		1E733F4D1382EC3F00292604 /* navSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E733F4C1382EC3F00292604 /* navSpinner.m */; };
 		1E7B2FD614F2B91000C4E6BB /* LICENCE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1E7B2FD514F2B91000C4E6BB /* LICENCE.txt */; };
@@ -51,7 +52,6 @@
 		1E9F26CA138BC0EE00087125 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E9F26C8138BC0EE00087125 /* Icon@2x.png */; };
 		1EA7229A13360EDF00CDC608 /* MyPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA7229913360EDF00CDC608 /* MyPickerController.m */; };
 		1EA722A413360F3900CDC608 /* pickerview.html in Resources */ = {isa = PBXBuildFile; fileRef = 1EA722A313360F3900CDC608 /* pickerview.html */; };
-		1EA84A37137E96230033C6EF /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1EA84A36137E96230033C6EF /* README.txt */; };
 		1EA9371514C1E47000A89409 /* scrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9371414C1E47000A89409 /* scrollView.m */; };
 		1EA9374B14C1F0B300A89409 /* scrollview.html in Resources */ = {isa = PBXBuildFile; fileRef = 1EA9374A14C1F0B300A89409 /* scrollview.html */; };
 		1EB1A1B51512482800D2F999 /* gestures.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB1A1B41512482800D2F999 /* gestures.m */; };
@@ -130,6 +130,7 @@
 		1E4F676114ACA8F300EA3FCB /* customUIAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customUIAlert.h; sourceTree = "<group>"; };
 		1E4F676214ACA8F300EA3FCB /* customUIAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customUIAlert.m; sourceTree = "<group>"; };
 		1E6490B3140FBDD30097C5F6 /* undetecttel.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = undetecttel.html; sourceTree = "<group>"; };
+		1E6967EB15543BDE00748599 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		1E733F481382EA4600292604 /* buttonlessAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buttonlessAlert.h; sourceTree = "<group>"; };
 		1E733F491382EA4600292604 /* buttonlessAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = buttonlessAlert.m; sourceTree = "<group>"; };
 		1E733F4B1382EC3F00292604 /* navSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = navSpinner.h; sourceTree = "<group>"; };
@@ -159,7 +160,6 @@
 		1EA7229813360EDF00CDC608 /* MyPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPickerController.h; sourceTree = "<group>"; };
 		1EA7229913360EDF00CDC608 /* MyPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPickerController.m; sourceTree = "<group>"; };
 		1EA722A313360F3900CDC608 /* pickerview.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = pickerview.html; sourceTree = "<group>"; };
-		1EA84A36137E96230033C6EF /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		1EA9371314C1E47000A89409 /* scrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scrollView.h; sourceTree = "<group>"; };
 		1EA9371414C1E47000A89409 /* scrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = scrollView.m; sourceTree = "<group>"; };
 		1EA9374A14C1F0B300A89409 /* scrollview.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = scrollview.html; sourceTree = "<group>"; };
@@ -350,7 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				1E7B2FD514F2B91000C4E6BB /* LICENCE.txt */,
-				1EA84A36137E96230033C6EF /* README.txt */,
+				1E6967EB15543BDE00748599 /* README.md */,
 				1E312974135A043700C4D881 /* Default@2x.png */,
 				1E312972135A043200C4D881 /* Default.png */,
 				1E312989135A098B00C4D881 /* nk_background.png */,
@@ -495,7 +495,6 @@
 				1E31297A135A049B00C4D881 /* wbg.png in Resources */,
 				1E31298A135A098B00C4D881 /* nk_background.png in Resources */,
 				1EDFAE9C1377E1640094CCC8 /* table.html in Resources */,
-				1EA84A37137E96230033C6EF /* README.txt in Resources */,
 				1E9F26BA138ACDD400087125 /* search.html in Resources */,
 				1E9F26C2138BB47300087125 /* bug24.png in Resources */,
 				1E9F26C4138BB49C00087125 /* brush24.png in Resources */,
@@ -525,6 +524,7 @@
 				1E89D8D0154C31FC0002825E /* tablerowbgSel.png in Resources */,
 				1E89D8D2154C35AD0002825E /* tablerowbg@2x.png in Resources */,
 				1E89D8D4154C42F50002825E /* tablerowbgSel@2x.png in Resources */,
+				1E6967EC15543BDE00748599 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
