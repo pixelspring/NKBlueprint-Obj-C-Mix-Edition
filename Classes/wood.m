@@ -119,6 +119,10 @@
 	// [[UITabBar appearance] setTintColor:
 	// [UIColor colorWithRed:255.0 green:0.0 blue:0.0 alpha:0.2]];
 	
+	// Set tint color for tabBar Images
+	[[UITabBar appearance] setSelectedImageTintColor:[UIColor brownColor]];
+	[[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+	
 	// Set a background image for the selected tab
 	[[UITabBar appearance] setSelectionIndicatorImage:
 	[UIImage imageNamed:@"tabselect.png"]];
