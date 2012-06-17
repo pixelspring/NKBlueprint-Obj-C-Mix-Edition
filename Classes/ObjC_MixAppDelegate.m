@@ -38,9 +38,17 @@ extern BOOL _mainWebViewLoaded;
 	// Enable Safari's Web Inspector for iOS 5 using a conditional, as app will throw a hissy fit & crash if lower than iOS 5 :)
 	// Uncomment, Fire up Safari and visit http://localhost:9999 for web inspector goodness.
 	// Ignore warning for simulator & delete for release.
+	//
+	// Updated to remove compiler complaint:
+	// http://www.idryman.org/blog/2012/06/17/debug-uiwebview-in-your-ios-app/
+	//
 	// -----------------------------------------------------------------------------------------------------
 	//
-	// if ([[[UIDevice currentDevice] systemVersion] floatValue] > 5) {[NSClassFromString(@"WebView") _enableRemoteInspector];}
+	
+	#if (TARGET_IPHONE_SIMULATOR)
+	if ([[[UIDevice currentDevice] systemVersion] floatValue] > 5) {[NSClassFromString(@"WebView") performSelector:@selector(_enableRemoteInspector)];}
+	#endif
+	
 	//
 	// -----------------------------------------------------------------------------------------------------
 	
